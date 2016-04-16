@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Id cliente:</strong>
-  <%= @mascotum.id_cliente %>
+  <strong>Dueño:</strong>
+  <%if Cliente.find_by(id: @mascotum.clientes_id) != nil %>
+        <%= (Cliente.find_by(id: @mascotum.clientes_id)).nombre %>
+        <%= (Cliente.find_by(id: @mascotum.clientes_id)).apellido %>
+  <%else%>
+        N/A
+  <%end %>
 </p>
 
 <p>

@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Id cliente</th>
+      <th>Dueño</th>
       <th>Nombre</th>
       <th>Especie</th>
       <th>Raza</th>
@@ -17,7 +17,12 @@
   <tbody>
     <% @mascota.each do |mascotum| %>
       <tr>
-        <td><%= mascotum.id_cliente %></td>
+        <%if Cliente.find_by(id: mascotum.clientes_id) != nil %>
+        <td><%= (Cliente.find_by(id: mascotum.clientes_id)).nombre %> <%= (Cliente.find_by(id: mascotum.clientes_id)).apellido %> </td>
+        <%else%>
+        <td>N/A</td>
+        <%end %>
+        
         <td><%= mascotum.nombre %></td>
         <td><%= mascotum.especie %></td>
         <td><%= mascotum.raza %></td>

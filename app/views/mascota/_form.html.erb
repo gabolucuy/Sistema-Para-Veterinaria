@@ -10,10 +10,9 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= f.label :id_cliente %><br>
-    <%= f.number_field :id_cliente %>
+    <%= f.label :Dueño %><br>
+    <%= f.collection_select(:clientes_id, Cliente.all, :id, :nombre) %>
   </div>
   <div class="field">
     <%= f.label :nombre %><br>
