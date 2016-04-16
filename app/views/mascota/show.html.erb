@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id cliente:</strong>
+  <%= @mascotum.id_cliente %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @mascotum.nombre %>
+</p>
+
+<p>
+  <strong>Especie:</strong>
+  <%= @mascotum.especie %>
+</p>
+
+<p>
+  <strong>Raza:</strong>
+  <%= @mascotum.raza %>
+</p>
+
+<p>
+  <strong>Fecha nacimiento:</strong>
+  <%= @mascotum.fecha_nacimiento %>
+</p>
+
+<%= link_to 'Edit', edit_mascotum_path(@mascotum) %> |
+<%= link_to 'Back', mascota_path %>

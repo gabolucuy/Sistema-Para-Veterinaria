@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codigo: MyString
+  nombre: MyString
+  fecha_vencimiento: 2016-04-15
+  cantidad: 1
+
+two:
+  codigo: MyString
+  nombre: MyString
+  fecha_vencimiento: 2016-04-15
+  cantidad: 1
