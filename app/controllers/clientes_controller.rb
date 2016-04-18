@@ -10,6 +10,7 @@ class ClientesController < ApplicationController
   # GET /clientes/1
   # GET /clientes/1.json
   def show
+    @mascota = Mascotum.where(clientes_id: params[:id])
   end
 
   # GET /clientes/new

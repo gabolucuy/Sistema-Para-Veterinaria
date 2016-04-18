@@ -25,5 +25,34 @@
   <%= @cliente.correo %>
 </p>
 
+<strong>Mascotas del Dueño:</strong><br>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Especie</th>
+      <th>Raza</th>
+      <th>Fecha nacimiento</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mascota.each do |mascotum| %>
+      <tr>   
+        <td><%= mascotum.nombre %></td>
+        <td><%= mascotum.especie %></td>
+        <td><%= mascotum.raza %></td>
+        <td><%= mascotum.fecha_nacimiento %></td>
+        <td><%= link_to 'Show', mascotum %></td>
+        <td><%= link_to 'Edit', edit_mascotum_path(mascotum) %></td>
+        <td><%= link_to 'Destroy', mascotum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
 <%= link_to 'Edit', edit_cliente_path(@cliente) %> |
 <%= link_to 'Back', clientes_path %>
