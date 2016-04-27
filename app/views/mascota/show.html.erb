@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Dueño:</strong>
+  <%if Cliente.find_by(id: @mascotum.clientes_id) != nil %>
+        <%= (Cliente.find_by(id: @mascotum.clientes_id)).nombre %>
+        <%= (Cliente.find_by(id: @mascotum.clientes_id)).apellido %>
+  <%else%>
+        N/A
+  <%end %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @mascotum.nombre %>
+</p>
+
+<p>
+  <strong>Especie:</strong>
+  <%= @mascotum.especie %>
+</p>
+
+<p>
+  <strong>Raza:</strong>
+  <%= @mascotum.raza %>
+</p>
+
+<p>
+  <strong>Fecha nacimiento:</strong>
+  <%= @mascotum.fecha_nacimiento %>
+</p>
+
+
+<%= link_to 'Edit', edit_mascotum_path(@mascotum) %> |
+<%= link_to 'Back', mascota_path %>

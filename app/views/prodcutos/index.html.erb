@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Prodcutos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Codigo</th>
+      <th>Nombre</th>
+      <th>Fecha vencimiento</th>
+      <th>Cantidad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prodcutos.each do |prodcuto| %>
+      <tr>
+        <td><%= prodcuto.codigo %></td>
+        <td><%= prodcuto.nombre %></td>
+        <td><%= prodcuto.fecha_vencimiento %></td>
+        <td><%= prodcuto.cantidad %></td>
+        <td><%= link_to 'Show', prodcuto %></td>
+        <td><%= link_to 'Edit', edit_prodcuto_path(prodcuto) %></td>
+        <td><%= link_to 'Destroy', prodcuto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prodcuto', new_prodcuto_path %>
+<a href="veterinaria">Atras</a>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_cliente: 1
+  nombre: MyString
+  especie: MyString
+  raza: MyString
+  fecha_nacimiento: 2016-04-15
+
+two:
+  id_cliente: 1
+  nombre: MyString
+  especie: MyString
+  raza: MyString
+  fecha_nacimiento: 2016-04-15

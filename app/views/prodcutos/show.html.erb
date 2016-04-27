@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @prodcuto.codigo %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @prodcuto.nombre %>
+</p>
+
+<p>
+  <strong>Fecha vencimiento:</strong>
+  <%= @prodcuto.fecha_vencimiento %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @prodcuto.cantidad %>
+</p>
+
+<%= link_to 'Edit', edit_prodcuto_path(@prodcuto) %> |
+<%= link_to 'Back', prodcutos_path %>
