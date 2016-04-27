@@ -2,7 +2,7 @@
 
 <h1>Listing Clientes</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Ci</th>
@@ -32,6 +32,6 @@
 
 <br>
 
-<%= link_to 'New Cliente', new_cliente_path %>
-<br>
-<a href="veterinaria">Atras</a>
+<%= link_to 'New Cliente', new_cliente_path, class: "btn btn-success" %>
+<br> 
+<a class="btn btn-info" href="veterinaria">Atras</a>

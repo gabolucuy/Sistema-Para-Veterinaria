@@ -37,7 +37,6 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
-
     autoprefixer-rails (6.3.6)
       execjs
     binding_of_caller (0.7.2)
@@ -45,10 +44,6 @@ GEM
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
-
-    binding_of_caller (0.7.2)
-      debug_inspector (>= 0.0.1)
-
     builder (3.2.2)
     byebug (8.2.4)
     coffee-rails (4.1.1)
@@ -154,10 +149,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-
   bootstrap-sass (~> 3.3.6)
-
-
   byebug
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
