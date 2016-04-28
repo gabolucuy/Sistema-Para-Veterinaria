@@ -1,7 +1,16 @@
+<style type="text/css">
+	body{
+		background-color: #AC7F41;
+		text-align: center; 
+	}
+</style>
+	
+		<h1><strong> Veterinaria</strong> </h1>
+		<%= image_tag "principal.jpg", :alt => "Twitter", :title => "logoVeterinaria" , class:"img-circle"%>
+		<h3>Bienvenido</h3>
+		<%= link_to 'Cliente', clientes_path ,class:"btn btn-default" %>
+		<%= link_to 'Productos', prodcutos_path ,class:"btn btn-default" %>
+		<%= link_to 'Mascotas', mascota_path, class:"btn btn-default" %>
+		
+	
 
-<h1><strong> Veterinaria</strong> </h1>
-
-<p>Bienvenido</p>
-<%= link_to 'Cliente', clientes_path %>
-<%= link_to 'Productos', prodcutos_path %>
-<%= link_to 'Mascotas', mascota_path %>
