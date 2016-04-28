@@ -1,3 +1,21 @@
+
+<style type="text/css">
+  p{
+    color:white;
+   }
+   td{
+    background-color: white;
+   }
+   thead{
+    color:white;
+   }
+   strong{
+    color:white;
+   }
+
+</style>
+
+<h1><strong>Datos del Cliente </strong></h1>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -25,8 +43,12 @@
   <%= @cliente.correo %>
 </p>
 
-<strong>Mascotas del Dueño:</strong><br>
-<table>
+<p><strong>Mascotas del Dueño:</strong><p>
+<br>
+<br>
+<div class="row">
+<div class="col-md-4 col-md-offset-4">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Nombre</th>
@@ -44,15 +66,16 @@
         <td><%= mascotum.especie %></td>
         <td><%= mascotum.raza %></td>
         <td><%= mascotum.fecha_nacimiento %></td>
-        <td><%= link_to 'Show', mascotum %></td>
-        <td><%= link_to 'Edit', edit_mascotum_path(mascotum) %></td>
-        <td><%= link_to 'Destroy', mascotum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', mascotum , class: "btn btn-info" %></td>
+        <td><%= link_to 'Editar', edit_mascotum_path(mascotum) , class: "btn btn-warning"%></td>
+        <td><%= link_to 'Eliminar', mascotum, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
+</div>
 <br>
 
-<%= link_to 'Edit', edit_cliente_path(@cliente) %> |
-<%= link_to 'Back', clientes_path %>
+<%= link_to 'Editar', edit_cliente_path(@cliente), class: "btn btn-warning" %> |
+<%= link_to 'Lista de Clientes', clientes_path , class: "btn btn-primary"%>

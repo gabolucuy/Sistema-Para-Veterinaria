@@ -1,3 +1,9 @@
+<style type="text/css">
+   label{
+    color:white;
+   }
+
+</style>
 <%= form_for(@mascotum) do |f| %>
   <% if @mascotum.errors.any? %>
     <div id="error_explanation">
@@ -30,7 +36,9 @@
     <%= f.label :fecha_nacimiento %><br>
     <%= f.date_select :fecha_nacimiento %>
   </div>
+  <br>
   <div class="actions">
     <%= f.submit %>
   </div>
+  <br>
 <% end %>

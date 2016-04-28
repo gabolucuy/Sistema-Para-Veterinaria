@@ -1,7 +1,23 @@
+<style type="text/css">
+  thead{
+    color:white;
+  }
+   td{
+    background-color: white;
+   }
+
+  h1{
+    color:white;
+  }
+</style>
+
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Clientes</h1>
+<h1>Lista de Clientes</h1>
 
+<div class="row">
+
+ <div class="col-md-4 col-md-offset-4">
 <table class="table table-striped">
   <thead>
     <tr>
@@ -22,15 +38,18 @@
         <td><%= cliente.apellido %></td>
         <td><%= cliente.telefono %></td>
         <td><%= cliente.correo %></td>
-        <td><%= link_to 'Show', cliente, class: "btn btn-info"%></td>
-        <td><%= link_to 'Edit', edit_cliente_path(cliente) ,class: "btn btn-warning"%></td>
-        <td><%= link_to 'Destroy', cliente, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-danger" %></td>
+        <td><%= link_to 'Ver', cliente, class: "btn btn-info"%></td>
+        <td><%= link_to 'Editar', edit_cliente_path(cliente) ,class: "btn btn-warning"%></td>
+        <td><%= link_to 'Eliminar', cliente, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
+
+</div>
 
 <br>
 
-<%= link_to 'New Cliente', new_cliente_path, class: "btn btn-success" %>
-<a class="btn btn-primary" href="veterinaria">Atras</a>
+<%= link_to 'Registrar Cliente', new_cliente_path, class: "btn btn-success" %>
+<a class="btn btn-primary" href="veterinaria">Home</a>

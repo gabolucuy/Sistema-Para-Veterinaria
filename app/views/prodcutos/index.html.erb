@@ -1,8 +1,25 @@
+<style type="text/css">
+
+  h1{
+    color:white;
+   }
+
+   thead{
+    color:white;
+   }
+
+    td{
+    background-color: white;
+   }
+
+</style>
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Prodcutos</h1>
+<h1>Lista de Prodcutos</h1>
 
-<table>
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Codigo</th>
@@ -20,15 +37,17 @@
         <td><%= prodcuto.nombre %></td>
         <td><%= prodcuto.fecha_vencimiento %></td>
         <td><%= prodcuto.cantidad %></td>
-        <td><%= link_to 'Show', prodcuto %></td>
-        <td><%= link_to 'Edit', edit_prodcuto_path(prodcuto) %></td>
-        <td><%= link_to 'Destroy', prodcuto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', prodcuto, class: "btn btn-info" %></td>
+        <td><%= link_to 'Editar', edit_prodcuto_path(prodcuto), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Eliminar', prodcuto, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
+</div>
 
 <br>
 
-<%= link_to 'New Prodcuto', new_prodcuto_path %>
-<a href="veterinaria">Atras</a>
+<%= link_to 'Registrar Producto', new_prodcuto_path, class: "btn btn-success" %>
+<a class="btn btn-primary" href="veterinaria">Home</a>

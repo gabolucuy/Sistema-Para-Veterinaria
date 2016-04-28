@@ -1,5 +1,24 @@
-<p id="notice"><%= notice %></p>
+<style type="text/css">
+  p{
+    color:white;
+   }
+   td{
+    background-color: white;
+   }
+   thead{
+    color:white;
+   }
+   h1{
+   	color: white;
+   }
+ strong{
+    color:white;
+   }
 
+</style>
+
+<h1><strong>Datos del Producto </strong></h1>
+<p id="notice"><%= notice %></p>
 <p>
   <strong>Codigo:</strong>
   <%= @prodcuto.codigo %>
@@ -20,5 +39,5 @@
   <%= @prodcuto.cantidad %>
 </p>
 
-<%= link_to 'Edit', edit_prodcuto_path(@prodcuto) %> |
-<%= link_to 'Back', prodcutos_path %>
+<%= link_to 'Editar', edit_prodcuto_path(@prodcuto), class: "btn btn-warning" %> |
+<%= link_to 'Home Productos', prodcutos_path , class: "btn btn-primary"%>

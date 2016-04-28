@@ -1,3 +1,9 @@
+<style type="text/css">
+   label{
+    color:white;
+   }
+
+</style>
 <%= form_for(@cliente) do |f| %>
   <% if @cliente.errors.any? %>
     <div id="error_explanation">
@@ -31,7 +37,11 @@
     <%= f.label :correo %><br>
     <%= f.text_field :correo %>
   </div>
+  <br>
+  <br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit%>
   </div>
+  <br>
+  
 <% end %>

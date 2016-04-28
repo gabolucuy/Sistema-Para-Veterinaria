@@ -1,6 +1,13 @@
-<h1>Editing Prodcuto</h1>
+<style type="text/css">
+  h1{
+    color:white;
+   }
+
+  
+</style>
+<h1>Editar Producto</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @prodcuto %> |
-<%= link_to 'Back', prodcutos_path %>
+<%= link_to 'Ver', @prodcuto , class:"btn btn-info"%> |
+<%= link_to 'Home Productos', prodcutos_path, class:"btn btn-primary" %>

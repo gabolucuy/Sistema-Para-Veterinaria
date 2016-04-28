@@ -1,6 +1,13 @@
-<h1>Editing Cliente</h1>
+<style type="text/css">
+  h1{
+    color:white;
+   }
+
+  
+</style>
+<h1>Editar Cliente</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @cliente %> |
-<%= link_to 'Back', clientes_path %>
+<%= link_to 'Ver', @cliente, class:"btn btn-info"%>
+<%= link_to 'Lista de Clientes', clientes_path , class:"btn btn-primary"%>

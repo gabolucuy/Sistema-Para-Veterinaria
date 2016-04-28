@@ -1,3 +1,20 @@
+<style type="text/css">
+  p{
+    color:white;
+   }
+   td{
+    background-color: white;
+   }
+   thead{
+    color:white;
+   }
+   strong{
+    color:white;
+   }
+
+</style>
+
+<h1><strong>Datos de la Mascota</strong></h1>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -31,5 +48,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_mascotum_path(@mascotum) %> |
-<%= link_to 'Back', mascota_path %>
+<%= link_to 'Editar', edit_mascotum_path(@mascotum), class: "btn btn-warning" %> 
+<%= link_to 'home Mascotas', mascota_path , class: "btn btn-primary"%>

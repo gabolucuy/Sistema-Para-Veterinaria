@@ -1,3 +1,9 @@
+<style type="text/css">
+   label{
+    color:white;
+   }
+
+</style>
 <%= form_for(@prodcuto) do |f| %>
   <% if @prodcuto.errors.any? %>
     <div id="error_explanation">
@@ -27,7 +33,9 @@
     <%= f.label :cantidad %><br>
     <%= f.number_field :cantidad %>
   </div>
+  <br>
   <div class="actions">
     <%= f.submit %>
   </div>
+  <br>
 <% end %>
