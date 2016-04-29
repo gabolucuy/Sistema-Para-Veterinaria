@@ -7,18 +7,18 @@
 <%= form_for(@mascotum) do |f| %>
   <% if @mascotum.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@mascotum.errors.count, "error") %> prohibited this mascotum from being saved:</h2>
+      <font color="white"><h2><%= pluralize(@mascotum.errors.count, "errores") %> se encontraron al crear una nueva mascota:</h2></font>
 
       <ul>
       <% @mascotum.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <font color="white"><li ><%= message %></li></font>
       <% end %>
       </ul>
     </div>
   <% end %>
   <div class="field">
     <%= f.label :Dueño %><br>
-    <%= f.collection_select(:clientes_id, Cliente.all, :id, :nombre) %>
+    <%= f.collection_select(:clientes_id, Cliente.all, :id, :ci) %>
   </div>
   <div class="field">
     <%= f.label :nombre %><br>

@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+  get 'veterinaria'=> 'welcome#index'
+  get 'About'=> 'welcome#about'
+  get 'Contact'=> 'welcome#contact'
   get 'contact/index'
-
   get 'about/index'
 
   resources :mascota
   resources :prodcutos
   resources :clientes
-  get 'welcome/index'
-  get 'veterinaria'=> 'welcome#index'
-  get 'About'=> 'about#index'
-  get 'Contact'=> 'contact#index'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
