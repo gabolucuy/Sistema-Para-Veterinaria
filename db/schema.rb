@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160429022237) do
+ActiveRecord::Schema.define(version: 20160502180108) do
 
   create_table "clientes", force: :cascade do |t|
     t.integer  "ci"
@@ -22,6 +22,19 @@ ActiveRecord::Schema.define(version: 20160429022237) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "lists", force: :cascade do |t|
+    t.string   "producto"
+    t.integer  "costo"
+    t.integer  "cantidad"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "Venta_id"
+    t.integer  "ventum_id"
+  end
+
+  add_index "lists", ["Venta_id"], name: "index_lists_on_Venta_id"
+  add_index "lists", ["ventum_id"], name: "index_lists_on_ventum_id"
 
   create_table "mascota", force: :cascade do |t|
     t.string   "nombre"
@@ -44,5 +57,14 @@ ActiveRecord::Schema.define(version: 20160429022237) do
     t.datetime "updated_at",        null: false
     t.integer  "Precio"
   end
+
+  create_table "venta", force: :cascade do |t|
+    t.integer  "Costo"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "clientes_id"
+  end
+
+  add_index "venta", ["clientes_id"], name: "index_venta_on_clientes_id"
 
 end

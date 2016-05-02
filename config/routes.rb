@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :lists
+  resources :venta
   get 'welcome/index'
   get 'veterinaria'=> 'welcome#index'
   get 'About'=> 'welcome#about'

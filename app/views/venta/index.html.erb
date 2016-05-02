@@ -1,0 +1,51 @@
+<style type="text/css">
+  thead{
+    color:white;
+  }
+   td{
+    background-color: white;
+   }
+
+  h1{
+    color:white;
+  }
+</style>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Venta</h1>
+<div class="row">
+
+ <div class="col-md-4 col-md-offset-4">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id venta</th>
+      <th>Dueño</th>
+      <th>Costo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @venta.each do |ventum| %>
+      <tr>
+        <td><%= ventum.id %></td>
+        <%if Cliente.find_by(id: ventum.clientes_id) != nil %>
+        <td><%= (Cliente.find_by(id: ventum.clientes_id)).nombre %> <%= (Cliente.find_by(id: ventum.clientes_id)).apellido %> </td>
+        <%else%>
+        <td>N/A</td>
+        <%end %>
+        <td><%= ventum.Costo %></td>
+        <td><%= link_to 'Show', ventum, class: "btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_ventum_path(ventum) ,class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', ventum, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ventum', new_ventum_path, class: "btn btn-success" %>
+<a class="btn btn-primary" href="veterinaria">Home</a>
