@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160502180108) do
+ActiveRecord::Schema.define(version: 20160503182838) do
 
   create_table "clientes", force: :cascade do |t|
     t.integer  "ci"
@@ -29,11 +29,9 @@ ActiveRecord::Schema.define(version: 20160502180108) do
     t.integer  "cantidad"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "Venta_id"
     t.integer  "ventum_id"
   end
 
-  add_index "lists", ["Venta_id"], name: "index_lists_on_Venta_id"
   add_index "lists", ["ventum_id"], name: "index_lists_on_ventum_id"
 
   create_table "mascota", force: :cascade do |t|
@@ -43,10 +41,10 @@ ActiveRecord::Schema.define(version: 20160502180108) do
     t.date     "fecha_nacimiento"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.integer  "clientes_id"
+    t.integer  "cliente_id"
   end
 
-  add_index "mascota", ["clientes_id"], name: "index_mascota_on_clientes_id"
+  add_index "mascota", ["cliente_id"], name: "index_mascota_on_cliente_id"
 
   create_table "prodcutos", force: :cascade do |t|
     t.string   "codigo"
@@ -60,11 +58,11 @@ ActiveRecord::Schema.define(version: 20160502180108) do
 
   create_table "venta", force: :cascade do |t|
     t.integer  "Costo"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "clientes_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "cliente_id"
   end
 
-  add_index "venta", ["clientes_id"], name: "index_venta_on_clientes_id"
+  add_index "venta", ["cliente_id"], name: "index_venta_on_cliente_id"
 
 end

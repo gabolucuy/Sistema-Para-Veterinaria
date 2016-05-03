@@ -21,9 +21,9 @@
 <p id="notice"><%= notice %></p>
 <p>
 	<strong>Cliente:</strong>
-  <%if Cliente.find_by(id: @ventum.clientes_id) != nil %>
-        <%= (Cliente.find_by(id: @ventum.clientes_id)).nombre %>
-        <%= (Cliente.find_by(id: @ventum.clientes_id)).apellido %>
+  <%if Cliente.find_by(id: @ventum.cliente_id) != nil %>
+        <%= (Cliente.find_by(id: @ventum.cliente_id)).nombre %>
+        <%= (Cliente.find_by(id: @ventum.cliente_id)).apellido %>
   <%else%>
         N/A
   <%end %>

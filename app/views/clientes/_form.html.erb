@@ -7,11 +7,11 @@
 <%= form_for(@cliente) do |f| %>
   <% if @cliente.errors.any? %>
     <div id="error_explanation">
-      <font color="white"><h2><%= pluralize(@cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2></font>
+      <font color="black"><h2><%= pluralize(@cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2></font>
 
       <ul>
       <% @cliente.errors.full_messages.each do |message| %>
-        <font color="white"><li><%= message %></li></font>
+        <font color="black"><li><%= message %></li></font>
       <% end %>
       </ul>
     </div>

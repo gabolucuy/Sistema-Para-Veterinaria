@@ -18,7 +18,7 @@
   <% end %>
   <div class="field">
     <%= f.label :Dueño %><br>
-    <%= f.collection_select(:clientes_id, Cliente.all, :id, :ci) %>
+    <%= f.collection_select(:cliente_id, Cliente.all, :id, :ci) %>
   </div>
   <div class="field">
     <%= f.label :nombre %><br>

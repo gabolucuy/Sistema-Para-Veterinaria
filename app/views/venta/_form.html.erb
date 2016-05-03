@@ -20,7 +20,7 @@
   
    <div class="field">
     <%= f.label :Dueño %><br>
-    <%= f.collection_select(:clientes_id, Cliente.all, :id, :ci) %>
+    <%= f.collection_select(:cliente_id, Cliente.all, :id, :ci) %>
     <%= link_to 'Registrar Cliente', new_cliente_path, class: "btn btn-success" %>
   </div>
 

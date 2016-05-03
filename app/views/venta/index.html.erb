@@ -31,8 +31,8 @@
     <% @venta.each do |ventum| %>
       <tr>
         <td><%= ventum.id %></td>
-        <%if Cliente.find_by(id: ventum.clientes_id) != nil %>
-        <td><%= (Cliente.find_by(id: ventum.clientes_id)).nombre %> <%= (Cliente.find_by(id: ventum.clientes_id)).apellido %> </td>
+        <%if Cliente.find_by(id: ventum.cliente_id) != nil %>
+        <td><%= (Cliente.find_by(id: ventum.cliente_id)).nombre %> <%= (Cliente.find_by(id: ventum.cliente_id)).apellido %> </td>
         <%else%>
         <td>N/A</td>
         <%end %>

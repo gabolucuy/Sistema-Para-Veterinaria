@@ -19,9 +19,10 @@
 
 <p>
   <strong>Dueño:</strong>
-  <%if Cliente.find_by(id: @mascotum.clientes_id) != nil %>
-        <%= (Cliente.find_by(id: @mascotum.clientes_id)).nombre %>
-        <%= (Cliente.find_by(id: @mascotum.clientes_id)).apellido %>
+  <%if Cliente.find_by(id: @mascotum.cliente_id) != nil %>
+        <%= (Cliente.find_by(id: @mascotum.cliente_id)).nombre %>
+        <%= (Cliente.find_by(id: @mascotum.cliente_id)).apellido %>
+        <td><%= link_to 'Ver dueño', Cliente.find_by(id: @mascotum.cliente_id), class: "btn btn-info"%></td>
   <%else%>
         N/A
   <%end %>

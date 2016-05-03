@@ -69,6 +69,6 @@ class MascotaController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mascotum_params
-      params.require(:mascotum).permit(:nombre, :especie, :raza, :fecha_nacimiento, :clientes_id)
+      params.require(:mascotum).permit(:nombre, :especie, :raza, :fecha_nacimiento, :cliente_id)
     end
 end

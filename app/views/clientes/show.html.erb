@@ -48,6 +48,7 @@
 <br>
 <div class="row">
 <div class="col-md-4 col-md-offset-4">
+<%if@cliente.mascotums.count>0 %>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -60,16 +61,20 @@
   </thead>
 
   <tbody>
-    <% @mascota.each do |mascotum| %>
-      <tr>   
-        <td><%= mascotum.nombre %></td>
-        <td><%= mascotum.especie %></td>
-        <td><%= mascotum.raza %></td>
-        <td><%= mascotum.fecha_nacimiento %></td>
-        <td><%= link_to 'Ver', mascotum , class: "btn btn-info" %></td>
-        <td><%= link_to 'Editar', edit_mascotum_path(mascotum) , class: "btn btn-warning"%></td>
-        <td><%= link_to 'Eliminar', mascotum, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
-      </tr>
+   
+      <% @cliente.mascotums.each do |mascotum| %>
+        <tr>   
+          <td><%= mascotum.nombre %></td>
+          <td><%= mascotum.especie %></td>
+          <td><%= mascotum.raza %></td>
+          <td><%= mascotum.fecha_nacimiento %></td>
+          <td><%= link_to 'Ver', mascotum , class: "btn btn-info" %></td>
+          <td><%= link_to 'Editar', edit_mascotum_path(mascotum) , class: "btn btn-warning"%></td>
+          <td><%= link_to 'Eliminar', mascotum, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        </tr>
+      <% end %>
+    <%else%>
+      <strong>No hay mascotas disponible</strong>
     <% end %>
   </tbody>
 </table>
