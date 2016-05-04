@@ -41,10 +41,12 @@ ActiveRecord::Schema.define(version: 20160503182838) do
     t.date     "fecha_nacimiento"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "clientes_id"
     t.integer  "cliente_id"
   end
 
   add_index "mascota", ["cliente_id"], name: "index_mascota_on_cliente_id"
+  add_index "mascota", ["clientes_id"], name: "index_mascota_on_clientes_id"
 
   create_table "prodcutos", force: :cascade do |t|
     t.string   "codigo"
