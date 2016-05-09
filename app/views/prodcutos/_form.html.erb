@@ -6,14 +6,13 @@
 </style>
 <%= form_for(@prodcuto) do |f| %>
   <% if @prodcuto.errors.any? %>
-    <div id="error_explanation">
-      <font color="white"><h2><%= pluralize(@prodcuto.errors.count, "error") %> prohibited this prodcuto from being saved:</h2></font>
-
-      <ul>
+    <div class="container">
+    <div class="alert alert-danger" role="alert">
+      <font color="black"><h2><%= pluralize(@prodcuto.errors.count, "errores encontrados") %> prohibited this prodcuto from being saved:</h2></font>
       <% @prodcuto.errors.full_messages.each do |message| %>
-        <font color="white"><li><%= message %></li></font>
+        <font color="black"><li><%= message %></li></font>
       <% end %>
-      </ul>
+      </div>
     </div>
   <% end %>
 
