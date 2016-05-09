@@ -1,7 +1,9 @@
 class Cliente < ActiveRecord::Base
-	validates :ci, :nombre, :apellido, :correo, :telefono, presence: true
+	validates :ci, :nombre, :apellido, :telefono, presence: true
+	validates :correo,:presence=>{message: "no puede estar vacio"}
 	has_many :mascotums
 	has_many :ventums
+	validates :ci,:correo, uniqueness: true
 	validates :correo, :ci, uniqueness: true
 	before_create :correo?
 def correo?
@@ -11,5 +13,4 @@ def correo?
 		return false
 	end
 end
-
 end

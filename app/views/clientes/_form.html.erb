@@ -4,17 +4,18 @@
    }
 
 </style>
+
+
 <%= form_for(@cliente) do |f| %>
   <% if @cliente.errors.any? %>
-    <div id="error_explanation">
-      <font color="black"><h2><%= pluralize(@cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2></font>
-
-      <ul>
+    <div class="container">
+    <div class="alert alert-danger" role="alert">
+      <font color="black"><h2><%= pluralize(@cliente.errors.count, "Error(s)") %> <br>No se guardara este Cliente:</h2></font>
       <% @cliente.errors.full_messages.each do |message| %>
         <font color="black"><li><%= message %></li></font>
       <% end %>
-      </ul>
     </div>
+  </div>
   <% end %>
 
   <div class="field">
