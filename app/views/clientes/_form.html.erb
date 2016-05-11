@@ -2,10 +2,7 @@
    label{
     color:white;
    }
-
 </style>
-
-
 <%= form_for(@cliente) do |f| %>
   <% if @cliente.errors.any? %>
     <div class="container">
@@ -17,32 +14,34 @@
     </div>
   </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :ci %>
-    <%= f.number_field :ci %>
+  <div class="field, container">
+    <table class="table">
+      <tr>
+        <td><%= f.label :ci %></td>
+        <td><%= f.number_field :ci %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :nombre %></td>
+        <td><%= f.text_field :nombre %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :apellido %></td>
+        <td><%= f.text_field :apellido %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :telefono %></td>
+        <td><%= f.number_field :telefono %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :correo %></td>
+        <td><%= f.text_field :correo %></td>
+      </tr>
+    </table>
   </div>
-  <div class="field">
-    <%= f.label :nombre %>
-    <%= f.text_field :nombre %>
-  </div>
-  <div class="field">
-    <%= f.label :apellido %>
-    <%= f.text_field :apellido %>
-  </div>
-  <div class="field">
-    <%= f.label :telefono %>
-    <%= f.number_field :telefono %>
-  </div>
-  <div class="field">
-    <%= f.label :correo %>
-    <%= f.text_field :correo %>
-  </div>
-  <br>
-  <br>
+</br>
   <div class="actions">
-    <%= f.submit 'Guardar'%>
+    <%= f.submit 'Guardar',class:"big ui button, ui inverted olive button"%>
   </div>
-  <br>
-  
+</br>
+
 <% end %>

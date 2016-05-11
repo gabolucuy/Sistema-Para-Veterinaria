@@ -1,7 +1,12 @@
 class Mascotum < ActiveRecord::Base
 	belongs_to :cliente
-	validates :nombre, :especie, :raza, :fecha_nacimiento, :cliente_id, presence: true
-	before_create :fecha_nac_verdad? 
+	validates :nombre,:presence=>{message: "No puede estar en blanco"}
+	validates :especie,:presence=>{message: "No puede estar en blanco"}
+	validates :raza,:presence=>{message: "No puede estar en blanco"}
+	validates :fecha_nacimiento,:presence=>{message: "No puede estar en blanco"}
+	validates :cliente_id,:presence=>{message: "No puede estar en blanco"}
+
+	before_create :fecha_nac_verdad?
 	def fecha_nac_verdad?
 		if( fecha_nacimiento < Date.today)
 			return true
@@ -11,4 +16,3 @@ class Mascotum < ActiveRecord::Base
 		end
 	end
 end
-	

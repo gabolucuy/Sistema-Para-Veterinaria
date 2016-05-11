@@ -2,45 +2,47 @@
    label{
     color:white;
    }
-
 </style>
 <%= form_for(@mascotum) do |f| %>
   <% if @mascotum.errors.any? %>
-        <div class="container">
+  <div class="container">
     <div class="alert alert-danger" role="alert">
       <font color="black"><h2><%= pluralize(@mascotum.errors.count, "errores") %> se encontraron al crear una nueva mascota:</h2></font>
-
       <ul>
       <% @mascotum.errors.full_messages.each do |message| %>
         <font color="black"><li ><%= message %></li></font>
       <% end %>
       </ul>
-      </div>
     </div>
+  </div>
   <% end %>
-  <div class="field">
-    <%= f.label :Dueño %><br>
-    <%= f.collection_select(:cliente_id, Cliente.all, :id, :ci) %>
-  </div>
-  <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
-  </div>
-  <div class="field">
-    <%= f.label :especie %><br>
-    <%= f.text_field :especie %>
-  </div>
-  <div class="field">
-    <%= f.label :raza %><br>
-    <%= f.text_field :raza %>
-  </div>
-  <div class="field">
-    <%= f.label :fecha_nacimiento %><br>
-    <%= f.date_field :fecha_nacimiento %>
+  <div class="field, container">
+    <table class="table">
+      <tr>
+        <td><%= f.label :Dueño %></td>
+        <td><%= f.collection_select(:cliente_id, Cliente.all, :id, :ci) %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :nombre %></td>
+        <td><%= f.text_field :nombre %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :especie %></td>
+        <td><%= f.text_field :especie %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :raza %></td>
+        <td><%= f.text_field :raza %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :fecha_nacimiento %></td>
+        <td><%= f.date_field :fecha_nacimiento %></td>
+      </tr>
+  </table>
   </div>
   <br>
   <div class="actions">
-    <%= f.submit 'Guardar'%>
+    <%= f.submit 'Guardar' , class:"big ui button, ui inverted olive button" %>
   </div>
   <br>
 <% end %>
