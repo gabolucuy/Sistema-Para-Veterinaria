@@ -53,37 +53,41 @@
   </div>
   <div class="field">
     <%= f.label :producto %><br>
-   
-    <%= f.collection_select(:producto, Prodcuto.all, :nombre, :nombre) %>
+    <%= f.collection_select(:producto, Prodcuto.all, :nombre, :nombre) %><br>
   </div>
    <div class="field">
     <%= f.label :cantidad %><br>
-    <%= f.number_field :cantidad %>
+    <%= f.number_field :cantidad %><br>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <br><%= f.submit 'Agregar',class: "big ui button, ui inverted green button" %><br>
   </div>
 <% end %>
 <% if @ventum.lists.count > 0%>
     <strong>Lista de productos</strong>
     <br>
-    <table>
+    <div class="container">
+    <table class="ui olive table, table">
+    <thead>
       <tr>
-        <td>Producto</td>
-        <td>costo </td>
-        <td>Unidades</td>
+        <th >Producto</th>
+        <th >Costo </th>
+        <th >Unidades</th>
       </tr>
-    <% @ventum.lists.each do |com|%>      
+    </thead>
+
+    <% @ventum.lists.each do |com|%>
       <tr>
         <td><%=com.producto %></td>
         <td><%=com.costo %> BS.</td>
         <td><%=com.cantidad %></td>
-        <td><%= link_to 'Destroy', com, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Eliminar', com, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <%end%>
     </table>
+  </div>
   <%end%>
-
-
-<%= link_to 'Edit', edit_ventum_path(@ventum), class: "btn btn-warning" %> 
-<%= link_to 'Back', venta_path , class: "btn btn-primary"%>
+<br>
+<br>
+<%= link_to 'Editar', edit_ventum_path(@ventum), class: "big ui button, ui inverted yellow button" %>
+<%= link_to 'Terminar compra', venta_path , class: "big ui button, ui inverted blue button"%>

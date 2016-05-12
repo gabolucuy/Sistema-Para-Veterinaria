@@ -18,9 +18,9 @@
         <td><%= list.producto %></td>
         <td><%= list.costo %></td>
         <td><%= list.cantidad %></td>
-        <td><%= link_to 'Show', list %></td>
-        <td><%= link_to 'Edit', edit_list_path(list) %></td>
-        <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', list %></td>
+        <td><%= link_to 'Editar', edit_list_path(list) %></td>
+        <td><%= link_to 'Eliminar', list, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>

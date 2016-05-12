@@ -17,18 +17,19 @@
     </div>
   <% end %>
 
-  
+
    <div class="field">
-    <%= f.label 'Cliente' %><br>
+    <%= f.label 'Cliente' %>
     <%= f.collection_select(:cliente_id, Cliente.all, :id, :ci) %>
+    <div class="actions">
+      <%= f.submit 'Siguiente',class: "big ui button, ui inverted green button"%>
+      <br>
+    </div>
     <br>
     <br>
-    <%= link_to 'Registrar Cliente', new_cliente_path, class: "btn btn-success" %>
+    <%= link_to 'Registrar Cliente', new_cliente_path,  class: "big ui button, ui inverted gray  button" %>
   </div>
 
-  <div class="actions">
-    <br><%= f.submit 'Siguiente'%>
-    <br>
-  </div>
+
 
 <% end %>

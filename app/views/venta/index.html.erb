@@ -13,7 +13,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Venta</h1>
+<h1>Lista de Ventas</h1>
 <div class="row">
 
  <div class="col-md-4 col-md-offset-4">
@@ -37,9 +37,9 @@
         <td>N/A</td>
         <%end %>
         <td><%= ventum.Costo %></td>
-        <td><%= link_to 'Show', ventum, class: "btn btn-info" %></td>
-        <td><%= link_to 'Edit', edit_ventum_path(ventum) ,class: "btn btn-warning" %></td>
-        <td><%= link_to 'Destroy', ventum, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"  %></td>
+        <td><%= link_to 'Mostrar', ventum, class: "btn btn-info" %></td>
+        <td><%= link_to 'Editar', edit_ventum_path(ventum) ,class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destruir', ventum, method: :delete, data: { confirm: 'Estas seguro?' }, class: "btn btn-danger"  %></td>
       </tr>
     <% end %>
   </tbody>
@@ -47,5 +47,5 @@
 
 <br>
 
-<%= link_to 'New Ventum', new_ventum_path, class: "btn btn-success" %>
+<%= link_to 'Nueva Venta', new_ventum_path, class: "btn btn-success" %>
 <a class="btn btn-primary" href="veterinaria">Home</a>
