@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/prodcutos/:id/modificar' => 'prodcutos#modificar'
   resources :lists
   resources :venta
   get 'welcome/index'

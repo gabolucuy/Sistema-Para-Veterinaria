@@ -6,15 +6,18 @@
 </style>
 <%= form_for(@ventum) do |f| %>
   <% if @ventum.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@ventum.errors.count, "error") %> prohibited this ventum from being saved:</h2>
-
+    
+<div class="container">
+    <div class="alert alert-danger" role="alert">
+      <font color="black"><h2><%= pluralize(@ventum.errors.count, "error") %> prohibited this ventum from being saved:</h2></font>
       <ul>
       <% @ventum.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <font color="black"><li ><%= message %></li></font>
       <% end %>
       </ul>
     </div>
+  </div>
+
   <% end %>
 
 
