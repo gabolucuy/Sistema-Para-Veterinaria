@@ -17,6 +17,21 @@ class ProdcutosController < ApplicationController
     @prodcuto = Prodcuto.new
   end
 
+  def modificar
+    @prodcuto = Prodcuto.find(params[:id])
+    if(params[:cantbox].to_i + @prodcuto.cantidad >= 0 )
+      @prodcuto.cantidad=@prodcuto.cantidad + params[:cantbox].to_i
+      @prodcuto.save
+      respond_to do |format|      
+        format.html { redirect_to @prodcuto, notice: 'Modificado exitoso' }
+      end
+    else
+      respond_to do |format|    
+        format.html { redirect_to @prodcuto, notice: 'Error al modificar' }
+      end
+    end
+  end
+
   # GET /prodcutos/1/edit
   def edit
   end
