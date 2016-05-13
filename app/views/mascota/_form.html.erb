@@ -28,7 +28,16 @@
       </tr>
       <tr>
         <td><%= f.label :especie %></td>
-        <td><%= f.text_field :especie %></td>
+        <td>
+          <% especies = {'CAN'=> 'CAN', 'FELINO'=>'FELINO', 'OTRO'=>'OTRO'} %>
+          <fieldset>
+            <% lista = especies.sort %>
+            <% lista.each do |x| %>
+              <%= f.radio_button :especie, x[1]%>
+              <label for="<%= x[1]%>"><%= x[0]%></label>
+            <% end %>
+          </fieldset>
+        </td>
       </tr>
       <tr>
         <td><%= f.label :raza %></td>

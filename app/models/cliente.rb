@@ -1,10 +1,10 @@
 class Cliente < ActiveRecord::Base
-	validates :ci, :uniqueness=>{message:"ya esta registrado"}
-	validates :ci,:presence=>{message: "no puede estar vacio"}
-	validates :nombre,:presence=>{message: "no puede estar vacio"}
-	validates :apellido,:presence=>{message: "no puede estar vacio"}
-	validates :telefono,:presence=>{message: "no puede estar vacio"}
-	validates :correo,:presence=>{message: "no puede estar vacio"}
+	validates :ci, :uniqueness=>{message:"Ya esta registrado"}
+	validates :ci,:presence=>{message: "No puede estar vacio"}
+	validates :nombre,:presence=>{message: "No puede estar vacio"}
+	validates :apellido,:presence=>{message: "No puede estar vacio"}
+	validates :telefono,:presence=>{message: "No puede estar vacio"}
+	validates :correo,:presence=>{message: "No puede estar vacio"}
 	validates :correo, uniqueness: true
 	has_many :mascotums
 	has_many :ventums
