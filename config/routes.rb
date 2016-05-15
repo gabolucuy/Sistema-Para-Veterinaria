@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :veterinarios
+  resources :veterinarios
   get '/prodcutos/:id/modificar' => 'prodcutos#modificar'
   resources :lists
   resources :venta

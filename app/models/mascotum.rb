@@ -11,7 +11,7 @@ class Mascotum < ActiveRecord::Base
 		if( fecha_nacimiento < Date.today)
 			return true
 		else
-			errors.add(:fecha_nacimiento, "debe ser menor a la fecha actual")
+			errors.add(:fecha_nacimiento, "Debe ser menor a la fecha actual")
 			return false
 		end
 	end
