@@ -61,16 +61,16 @@
   </thead>
 
   <tbody>
-   
+
       <% @cliente.mascotums.each do |mascotum| %>
-        <tr>   
+        <tr>
           <td><%= mascotum.nombre %></td>
           <td><%= mascotum.especie %></td>
           <td><%= mascotum.raza %></td>
           <td><%= mascotum.fecha_nacimiento %></td>
           <td><%= link_to 'Ver', mascotum , class: "btn btn-info" %></td>
           <td><%= link_to 'Editar', edit_mascotum_path(mascotum) , class: "btn btn-warning"%></td>
-          <td><%= link_to 'Eliminar', mascotum, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+          <td><%= link_to 'Eliminar', mascotum, method: :delete, data: { confirm: 'Esta seguro?' }, class: "btn btn-danger" %></td>
         </tr>
       <% end %>
     <%else%>
@@ -81,6 +81,6 @@
 </div>
 </div>
 <br>
-
+<%= link_to 'Registrar Mascota', new_mascotum_path , class: "btn btn-success" %>
 <%= link_to 'Editar', edit_cliente_path(@cliente), class: "btn btn-warning" %> |
 <%= link_to 'Lista de Clientes', clientes_path , class: "btn btn-primary"%>
