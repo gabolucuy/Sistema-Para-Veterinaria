@@ -8,7 +8,15 @@
 		<h1><strong> Veterinaria</strong> </h1>
 		<%= image_tag "principal.jpg", :alt => "Twitter", :title => "logoVeterinaria" , class:"img-circle" ,width:"440px",height:"440px"%>
 		<h3>Bienvenido</h3>
-		<%= link_to 'Clientes', clientes_path , class:"btn btn-warning" %>
-		<%= link_to 'Productos', prodcutos_path ,class:"btn btn-warning" %>
-		<%= link_to 'Mascotas', mascota_path, class:"btn btn-warning" %>
-		<%= link_to 'Venta', venta_path, class:"btn btn-warning" %>
+
+		<div class="ui vertical buttons">
+			<%= link_to 'Clientes', clientes_path , class:"huge ui button,ui inverted orange button" %></br>
+			<%= link_to 'Mascotas', mascota_path, class:"huge ui button,ui inverted orange button" %>
+		</div>
+		<div class="ui vertical buttons">
+
+		</div>
+		<div class="ui vertical buttons">
+			<%= link_to 'Productos', prodcutos_path ,class:"huge ui button,ui inverted olive button" %>
+			<%= link_to 'Venta', venta_path, class:"huge ui button,ui inverted olive button" %>
+	</div>
