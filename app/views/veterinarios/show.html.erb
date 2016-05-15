@@ -40,6 +40,10 @@
   <strong>Correo:</strong>
   <%= @veterinario.correo %>
 </p>
+<p>
+  <strong>Especialidad:</strong>
+  <%= @veterinario.especialidad %>
+</p>
 
-<%= link_to 'Edit', edit_veterinario_path(@veterinario) , class: "btn btn-warning"%>
-<%= link_to 'Back', veterinarios_path, class: "btn btn-primary" %>
+<%= link_to 'Editar', edit_veterinario_path(@veterinario) , class: "btn btn-warning"%>
+<%= link_to 'Atras', veterinarios_path, class: "btn btn-primary" %>

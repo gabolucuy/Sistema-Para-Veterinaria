@@ -26,6 +26,8 @@
       <th>Apellido</th>
       <th>Telefono</th>
       <th>Correo</th>
+      <th>Especialidad</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -38,6 +40,8 @@
         <td><%= veterinario.apellido %></td>
         <td><%= veterinario.telefono %></td>
         <td><%= veterinario.correo %></td>
+        <td><%= veterinario.especialidad %></td>
+
         <td><%= link_to 'Ver', veterinario ,class: "btn btn-info"%></td>
         <td><%= link_to 'Editar', edit_veterinario_path(veterinario),class: "btn btn-warning" %></td>
         <td><%= link_to 'Eliminar', veterinario, method: :delete, data: { confirm: 'Esta seguro?' }, class: "btn btn-danger" %></td>

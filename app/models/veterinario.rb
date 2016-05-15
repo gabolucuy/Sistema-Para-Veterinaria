@@ -5,6 +5,8 @@ class Veterinario < ActiveRecord::Base
 	validates :apellido,:presence=>{message: "No puede estar vacio"}
 	validates :telefono,:presence=>{message: "No puede estar vacio"}
 	validates :correo,:presence=>{message: "No puede estar vacio"}
+  validates :especialidad,:presence=>{message: "No puede estar vacio"}
+
 	validates :correo, uniqueness: true
   def correo?
   	a=self.correo.split('@')

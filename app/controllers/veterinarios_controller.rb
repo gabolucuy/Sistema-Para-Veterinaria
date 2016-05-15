@@ -28,7 +28,7 @@ class VeterinariosController < ApplicationController
 
     respond_to do |format|
       if @veterinario.save
-        format.html { redirect_to @veterinario, notice: 'Veterinario was successfully created.' }
+        format.html { redirect_to @veterinario, notice: 'Veterinario fue creado satisfactoriamente!' }
         format.json { render :show, status: :created, location: @veterinario }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ class VeterinariosController < ApplicationController
   def destroy
     @veterinario.destroy
     respond_to do |format|
-      format.html { redirect_to veterinarios_url, notice: 'Veterinario was successfully destroyed.' }
+      format.html { redirect_to veterinarios_url, notice: 'Veterinario fue eliminado satisfactoriamente!' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class VeterinariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def veterinario_params
-      params.require(:veterinario).permit(:ci, :nombre, :apellido, :telefono, :correo)
+      params.require(:veterinario).permit(:ci, :nombre, :apellido, :telefono, :correo, :especialidad)
     end
 end
