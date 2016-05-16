@@ -19,15 +19,15 @@ class ProdcutosController < ApplicationController
 
   def modificar
     @prodcuto = Prodcuto.find(params[:id])
-    if(params[:cantbox].to_i + @prodcuto.cantidad >= 0 )
-      @prodcuto.cantidad=@prodcuto.cantidad + params[:cantbox].to_i
+    if(  @prodcuto.cantidad - params[:cantbox].to_i >= 0 )
+      @prodcuto.cantidad=@prodcuto.cantidad - params[:cantbox].to_i
       @prodcuto.save
       respond_to do |format|      
-        format.html { redirect_to @prodcuto, notice: 'Modificado exitoso' }
+        format.html { redirect_to @prodcuto, notice: 'Producto retirado de almacen' }
       end
     else
       respond_to do |format|    
-        format.html { redirect_to @prodcuto, notice: 'Error al modificar' }
+        format.html { redirect_to @prodcuto, notice: 'Error al modificar,cantidad insuficiente en almacen ' }
       end
     end
   end

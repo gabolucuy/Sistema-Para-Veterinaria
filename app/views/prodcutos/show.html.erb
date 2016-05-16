@@ -14,7 +14,9 @@
  strong{
     color:white;
    }
-
+   label{
+    color: white;
+   }
 </style>
 
 <h1><strong>Datos del Producto </strong></h1>
@@ -42,11 +44,14 @@
   <strong>Precio:</strong>
   <%= @prodcuto.Precio %>
 </p>
+
 <%= form_tag({:controller => "prodcutos", :action => "modificar"}, :method => :get) do %>
-  <%= label_tag("Cantidad:") %>
+  
+    <%= label_tag("Cantidad:") %> 
+
   <%= number_field_tag(:cantbox) %>
   <%= hidden_field :id, @prodcuto.id %>
-<%= submit_tag "Modificar" %>
+<%= submit_tag "Retirar" , class: "btn btn-danger" %> 
 <% end %>
 
 <%= link_to 'Editar', edit_prodcuto_path(@prodcuto), class: "btn btn-warning" %> |

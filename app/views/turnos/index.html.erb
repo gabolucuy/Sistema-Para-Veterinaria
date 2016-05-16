@@ -16,7 +16,7 @@
 </style>
 <p id="notice"><%= notice %></p>
 
-<h1><strong>Listing Turnos</strong></h1>
+<h1><strong>Lista de Turnos</strong></h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <table class="table table-striped">
@@ -48,7 +48,7 @@
                 <td>Terminado</td>
               <%end%>
             <%end %>
-            <td><%= link_to 'Destroy', turno, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger" %></td>
+            <td><%= link_to 'Eliminar', turno, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger" %></td>
 
           </tr>
         <% end %>
@@ -57,5 +57,6 @@
   </div>
 </div>
 <br>
+<br>
 
-<%= link_to 'New Turno', new_turno_path,class: "btn btn-success" , style:"color:white" %>
+<%= link_to 'Nuevo Turno', new_turno_path,class: "btn btn-success" , style:"color:white" %>

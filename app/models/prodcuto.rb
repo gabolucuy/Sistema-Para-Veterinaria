@@ -1,4 +1,5 @@
 class Prodcuto < ActiveRecord::Base
+	validates :codigo, :uniqueness=>{message:"Codigo ya se encuentra registrado"}
 	validates :codigo,:presence=>{message: "No puede estar en blanco"}
 	validates :nombre,:presence=>{message: "No puede estar en blanco"}
 	validates :fecha_vencimiento,:presence=>{message: "No puede estar en blanco"}

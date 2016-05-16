@@ -5,13 +5,13 @@ class List < ActiveRecord::Base
 	validate :cantidad?, :cant?,:verdad
 	before_destroy :retornar
 	def verdad
-		if(cantidad==nil)
+		if(cantidad==nil )
 			errors.add(:cantidad, " no puede ser 0")
 		end
 	end
 	def cant?
 		if(cantidad!=nil)
-			if self.cantidad == 0 
+			if (self.cantidad <= 0 ) 
 				errors.add(:cantidad, " no puede ser 0")
 			end
 		end
