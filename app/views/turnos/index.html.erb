@@ -1,43 +1,61 @@
+
+<style type="text/css">
+
+  h1{
+    color:white;
+   }
+
+   thead{
+    color:white;
+   }
+
+    td{
+    background-color: white;
+   }
+
+</style>
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Turnos</h1>
+<h1><strong>Listing Turnos</strong></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nro Atencion</th>
+          <th>Cliente</th>
+          <th>Estado</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nro Atencion</th>
-      <th>Cliente</th>
-      <th>Estado</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
+      <tbody>
+        <% @turnos.each do |turno| %>
+          <tr>
+            <td><%= turno.id %></td>
+            <%if Cliente.find_by(id: turno.cliente_id) != nil %>
+            <td><%= (Cliente.find_by(id: turno.cliente_id)).nombre %> <%= (Cliente.find_by(id: turno.cliente_id)).apellido %> </td>
+            <%else%>
+            <td>N/A</td>
+            <%end %>
+            <td><%= turno.estado %></td>
+            <%if turno.estado == "Espera" %>
+            <td><a href="/turnos/<%=turno.id%>/atendiendo">Cambiar a atendiendo</a> |</td>
+            <%else%>
+             <%if turno.estado == "Atendiendo" %>        
+              <td><a href="/turnos/<%=turno.id%>/atendido">Cambiar a atendido</a> |</td>
+              <%else%>
+                <td>Terminado</td>
+              <%end%>
+            <%end %>
+            <td><%= link_to 'Destroy', turno, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger" %></td>
 
-  <tbody>
-    <% @turnos.each do |turno| %>
-      <tr>
-        <td><%= turno.id %></td>
-        <%if Cliente.find_by(id: turno.cliente_id) != nil %>
-        <td><%= (Cliente.find_by(id: turno.cliente_id)).nombre %> <%= (Cliente.find_by(id: turno.cliente_id)).apellido %> </td>
-        <%else%>
-        <td>N/A</td>
-        <%end %>
-        <td><%= turno.estado %></td>
-        <%if turno.estado == "Espera" %>
-        <td><a href="/turnos/<%=turno.id%>/atendiendo">Cambiar a atendiendo</a> |</td>
-        <%else%>
-         <%if turno.estado == "Atendiendo" %>        
-          <td><a href="/turnos/<%=turno.id%>/atendido">Cambiar a atendido</a> |</td>
-          <%else%>
-            <td>Terminado</td>
-          <%end%>
-        <%end %>
-        <td><%= link_to 'Destroy', turno, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 <br>
 
-<%= link_to 'New Turno', new_turno_path %>
+<%= link_to 'New Turno', new_turno_path,class: "btn btn-success" , style:"color:white" %>

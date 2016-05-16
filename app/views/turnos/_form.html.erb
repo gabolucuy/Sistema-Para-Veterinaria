@@ -1,17 +1,28 @@
+<style type="text/css">
+   label{
+    color:white;
+   }
+   h1{
+     color: white;
+   }
+</style>
+
 <%= form_for(@turno) do |f| %>
   <% if @turno.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@turno.errors.count, "error") %> prohibited this turno from being saved:</h2>
-
+    <div class="container">
+    <div class="alert alert-danger" role="alert">
+      <font color="black"><h2><%= pluralize(@turno.errors.count, "error") %> prohibited this turno from being saved:</h2></font>
       <ul>
       <% @turno.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <font color="black"><li ><%= message %></li></font>
       <% end %>
       </ul>
     </div>
+    </div>
+
   <% end %>
 
-  <div class="field">
+  <div class="field, container">
     <%= f.label 'Cliente' %>
     <%= f.collection_select(:cliente_id, Cliente.all, :id, :ci) %>
   </div>
