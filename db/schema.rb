@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516043308) do
+ActiveRecord::Schema.define(version: 20160526215226) do
+
+  create_table "atencions", force: :cascade do |t|
+    t.date     "fecha"
+    t.integer  "cliente_id"
+    t.string   "mascota_nombre"
+    t.text     "anamnesis"
+    t.integer  "temperatura"
+    t.text     "mucosas"
+    t.text     "palpacion"
+    t.text     "diagnostico"
+    t.text     "tratamiento"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "Idveterinario"
+  end
 
   create_table "clientes", force: :cascade do |t|
     t.integer  "ci"

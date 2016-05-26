@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :atencions
   resources :turnos
   resources :veterinarios
   resources :veterinarios
