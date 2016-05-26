@@ -1,0 +1,70 @@
+<style type="text/css">
+  p{
+    color:white;
+   }
+   td{
+    background-color: white;
+   }
+   thead{
+    color:white;
+   }
+   strong{
+    color:white;
+   }
+
+</style>
+<h1><strong>Datos de la Atencion</strong></h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @atencion.fecha %>
+</p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @atencion.cliente_id %>
+</p>
+
+<p>
+  <strong>Veterinario:</strong>
+  <%= @atencion.Idveterinario %>
+</p>
+
+<p>
+  <strong>Mascota nombre:</strong>
+  <%= @atencion.mascota_nombre %>
+</p>
+
+<p>
+  <strong>Anamnesis:</strong>
+  <%= @atencion.anamnesis %>
+</p>
+
+<p>
+  <strong>Temperatura:</strong>
+  <%= @atencion.temperatura %>
+</p>
+
+<p>
+  <strong>Mucosas:</strong>
+  <%= @atencion.mucosas %>
+</p>
+
+<p>
+  <strong>Palpacion:</strong>
+  <%= @atencion.palpacion %>
+</p>
+
+<p>
+  <strong>Diagnostico:</strong>
+  <%= @atencion.diagnostico %>
+</p>
+
+<p>
+  <strong>Tratamiento:</strong>
+  <%= @atencion.tratamiento %>
+</p>
+
+<%= link_to 'Edit', edit_atencion_path(@atencion), class: "btn btn-warning"  %> |
+<%= link_to 'Back', atencions_path , class: "btn btn-primary" %>
