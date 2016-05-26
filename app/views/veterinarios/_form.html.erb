@@ -19,7 +19,7 @@
       </ul>
     </div>
     </div>
-      
+
   <% end %>
 
   <div class="field, container">
@@ -46,7 +46,9 @@
   </tr>
   <tr>
     <td><%= f.label :especialidad %></td>
-    <td><%= f.text_field :especialidad %></td>
+    <% especialidades = {'Medico'=> 'Medico','Ayudante'=> 'Ayudante','Estudiante veterinario'=>'EstudianteVeterinario','Tecnico en peluquero'=>'TecnicoPeluquero', 'Peluquero'=>'Peluquero', 'Master especialista en peluqueria y estetica canina'=>'MasterEspecialistaPeluquero'} %>
+    <% lista = especialidades.sort %>
+    <td><%= f.select :especialidad, lista %></td>
 </tr>
 </table>
   </div>
