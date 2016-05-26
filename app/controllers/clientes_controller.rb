@@ -12,7 +12,9 @@ class ClientesController < ApplicationController
   def show
     
   end
-
+  def ventas
+    @cliente = Cliente.find(params[:id])
+  end
   def buscar
     @clientes =  Cliente.where("nombre like :name1 or apellido like :name1 or ci like :name1", {:name1 => "%#{params[:searchbox]}%"})
   end
