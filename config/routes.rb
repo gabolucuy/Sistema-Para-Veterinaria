@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/clientes/buscar' => 'clientes#buscar'
   get '/mascota/buscar' => 'mascota#buscar'
   get '/prodcutos/:id/modificar' => 'prodcutos#modificar'
+  get '/prodcutos/:id/reabastecer' => 'prodcutos#reabastecer'
   get '/turnos/:id/atendiendo' => 'turnos#atendiendo'
   get '/turnos/:id/atendido' => 'turnos#atendido'
   resources :lists

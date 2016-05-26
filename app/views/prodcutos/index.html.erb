@@ -39,7 +39,7 @@
         <td><%= prodcuto.fecha_vencimiento %></td>
         <td><%= prodcuto.cantidad %></td>
         <td><%= prodcuto.Precio %></td>
-        <td><%= link_to 'Ver y Retirar', prodcuto, class: "btn btn-info" %></td>
+        <td><%= link_to 'Rehabastecer o Retirar', prodcuto, class: "btn btn-info" %></td>
         <td><%= link_to 'Editar', edit_prodcuto_path(prodcuto), class: "btn btn-warning" %></td>
         <td><%= link_to 'Eliminar', prodcuto, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>

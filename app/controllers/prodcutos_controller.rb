@@ -31,7 +31,20 @@ class ProdcutosController < ApplicationController
       end
     end
   end
-
+  def reabastecer
+    @prodcuto = Prodcuto.find(params[:id])
+    if(  @prodcuto.cantidad - params[:cantbox].to_i >= 0 )
+      @prodcuto.cantidad=@prodcuto.cantidad + params[:cantbox].to_i
+      @prodcuto.save
+      respond_to do |format|      
+        format.html { redirect_to @prodcuto, notice: 'Producto retirado de almacen' }
+      end
+    else
+      respond_to do |format|    
+        format.html { redirect_to @prodcuto, notice: 'Error al modificar,cantidad insuficiente en almacen ' }
+      end
+    end
+  end
   # GET /prodcutos/1/edit
   def edit
   end
