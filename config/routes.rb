@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :turnos
   resources :veterinarios
   resources :veterinarios
+  get '/clientes/buscar' => 'clientes#buscar'
   get '/prodcutos/:id/modificar' => 'prodcutos#modificar'
   get '/turnos/:id/atendiendo' => 'turnos#atendiendo'
   get '/turnos/:id/atendido' => 'turnos#atendido'
