@@ -1,5 +1,6 @@
 <strong>Ventas del cliente</strong>
 <p>Total pagado : <%= @cliente.ventums.sum(:Costo) %></p>
+<%if@cliente.ventums.count>0 %>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -21,5 +22,7 @@
     <% end %>
   </tbody>
 </table>
-
+<%else%>
+<p>No hay ventas registradas</p>
+<%end%>
 <p><a href="/clientes/<%=@cliente.id%>"><i class="btn btn-success"></i> Atras</a></p>
