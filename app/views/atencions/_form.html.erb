@@ -1,0 +1,69 @@
+<style type="text/css">
+   label{
+    color:white;
+   }
+   h1{
+     color: white;
+   }
+</style>
+<%= form_for(@atencion) do |f| %>
+  <% if @atencion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@atencion.errors.count, "error") %> prohibited this atencion from being saved:</h2>
+
+      <ul>
+      <% @atencion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field, container">
+    <table class="table">
+      <tr>
+        <td><%= f.label :fecha %></td>
+        <td><%= f.date_select :fecha %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :cliente_id %></td>
+        <td><%= f.number_field :cliente_id %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :Veterinario %></td>
+        <td><%= f.number_field :Idveterinario %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :mascota_nombre %></td>
+        <td><%= f.text_field :mascota_nombre %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :anamnesis %></td>
+        <td><%= f.text_area :anamnesis %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :temperatura %></td>
+        <td><%= f.number_field :temperatura %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :mucosas %></td>
+        <td><%= f.text_area :mucosas %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :palpacion %></td>
+        <td><%= f.text_area :palpacion %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :diagnostico %></td>
+        <td><%= f.text_area :diagnostico %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :tratamiento %></td>
+        <td><%= f.text_area :tratamiento %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Guardar', class:"big ui button, ui inverted olive button"  %>
+  </div>
+<% end %>
