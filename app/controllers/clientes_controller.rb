@@ -13,6 +13,10 @@ class ClientesController < ApplicationController
     
   end
 
+  def buscar
+    @clientes =  Cliente.where("nombre like :name1 or apellido like :name1 or ci like :name1", {:name1 => "%#{params[:searchbox]}%"})
+  end
+
   # GET /clientes/new
   def new
     @cliente = Cliente.new
