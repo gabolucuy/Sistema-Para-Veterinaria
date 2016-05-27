@@ -18,7 +18,7 @@
     color: white;
    }
 </style>
-
+<div id="muestra">
 <h1><strong>Datos del Producto </strong></h1>
 <p id="notice"><%= notice %></p>
 <p>
@@ -44,23 +44,23 @@
   <strong>Precio:</strong>
   <%= @prodcuto.Precio %>
 </p>
-
+</div>
 <%= form_tag({:controller => "prodcutos", :action => "reabastecer"}, :method => :get) do %>
-  
-    <%= label_tag("Cantidad:") %> 
+
+    <%= label_tag("Cantidad:") %>
 
   <%= number_field_tag(:cantbox) %>
   <%= hidden_field :id, @prodcuto.id %>
-<%= submit_tag "Reabastecer" , class: "btn btn-success" %> 
+<%= submit_tag "Reabastecer" , class: "btn btn-success" %>
 <% end %>
 
 <%= form_tag({:controller => "prodcutos", :action => "modificar"}, :method => :get) do %>
-  
-    <%= label_tag("Cantidad:") %> 
+
+    <%= label_tag("Cantidad:") %>
 
   <%= number_field_tag(:cantbox) %>
   <%= hidden_field :id, @prodcuto.id %>
-<%= submit_tag "Retirar" , class: "btn btn-danger" %> 
+<%= submit_tag "Retirar" , class: "btn btn-danger" %>
 <% end %>
 
 
