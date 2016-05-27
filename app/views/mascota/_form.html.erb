@@ -52,6 +52,32 @@
         <td><%= f.label :fecha_nacimiento %></td>
         <td><%= f.date_field :fecha_nacimiento %></td>
       </tr>
+      <tr>
+        <td><%= f.label :Color %></td>
+        <td><%= f.text_field :color %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :Sexo %></td>
+        <% genero = {'Masculino'=> true, 'Femenino'=> false} %>
+          <fieldset>
+            <% lista = genero.sort %>
+            <% lista.each do |x| %>
+              <%= f.radio_button :sexo, x[1]%>
+              <label for="<%= x[1]%>"><%= x[0]%></label>
+            <% end %>
+          </fieldset>
+      </tr>
+      <tr>
+        <td><%= f.label :Color %></td>
+        <% este = {'Si'=> true, 'No'=> false} %>
+          <fieldset>
+            <% lista = este.sort %>
+            <% lista.each do |x| %>
+              <%= f.radio_button :esterilizado, x[1]%>
+              <label for="<%= x[1]%>"><%= x[0]%></label>
+            <% end %>
+          </fieldset>
+      </tr>
   </table>
   </div>
   <br>

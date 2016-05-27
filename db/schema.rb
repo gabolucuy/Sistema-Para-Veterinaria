@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160527003019) do
+ActiveRecord::Schema.define(version: 20160527052327) do
 
   create_table "atencions", force: :cascade do |t|
     t.date     "fecha"
@@ -62,8 +62,11 @@ ActiveRecord::Schema.define(version: 20160527003019) do
     t.date     "fecha_nacimiento"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.integer  "cliente_id"
     t.integer  "clientes_id"
+    t.integer  "cliente_id"
+    t.boolean  "sexo"
+    t.boolean  "esterilizado"
+    t.string   "color"
   end
 
   add_index "mascota", ["cliente_id"], name: "index_mascota_on_cliente_id"
