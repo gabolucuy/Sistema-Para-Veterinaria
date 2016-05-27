@@ -2,10 +2,11 @@ Rails.application.routes.draw do
   resources :atencions
   resources :turnos
   resources :veterinarios
-  resources :veterinarios
-  get '/clientes/:id/ventas' => 'clientes#ventas'
+  resources :clientes
+
   get '/clientes/buscar' => 'clientes#buscar'
   get '/mascota/buscar' => 'mascota#buscar'
+  get '/clientes/:id/ventas' => 'clientes#ventas'
   get '/prodcutos/:id/modificar' => 'prodcutos#modificar'
   get '/prodcutos/:id/reabastecer' => 'prodcutos#reabastecer'
   get '/turnos/:id/atendiendo' => 'turnos#atendiendo'

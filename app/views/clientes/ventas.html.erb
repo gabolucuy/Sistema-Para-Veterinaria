@@ -1,5 +1,23 @@
-<strong>Ventas del cliente</strong>
+<style type="text/css">
+  p{
+    color:white;
+   }
+   td{
+    background-color: white;
+   }
+   thead{
+    color:white;
+   }
+   strong{
+    color:white;
+   }
+
+</style>
+
+<h1><strong>Ventas del cliente </strong></h1>
 <p>Total pagado : <%= @cliente.ventums.sum(:Costo) %></p>
+<div class="row">
+<div class="col-md-4 col-md-offset-4">
 <%if@cliente.ventums.count>0 %>
 <table class="table table-striped">
   <thead>
@@ -22,7 +40,9 @@
     <% end %>
   </tbody>
 </table>
+</div>
+</div>
 <%else%>
 <p>No hay ventas registradas</p>
 <%end%>
-<p><a href="/clientes/<%=@cliente.id%>"><i class="btn btn-success"></i> Atras</a></p>
+<%= link_to 'Atras', '/clientes/'+@cliente.id.to_s+'' , class: "btn btn-success" %>
