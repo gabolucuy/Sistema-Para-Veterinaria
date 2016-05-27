@@ -15,7 +15,7 @@
 
 </style>
 <p id="notice"><%= notice %></p>
-
+<div id="muestra">
 <h1><strong>Lista de Turnos</strong></h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -42,7 +42,7 @@
             <%if turno.estado == "Espera" %>
             <td><a href="/turnos/<%=turno.id%>/atendiendo">Cambiar a atendiendo</a> |</td>
             <%else%>
-             <%if turno.estado == "Atendiendo" %>        
+             <%if turno.estado == "Atendiendo" %>
               <td><a href="/turnos/<%=turno.id%>/atendido">Cambiar a atendido</a> |</td>
               <%else%>
                 <td>Terminado</td>
@@ -55,6 +55,7 @@
       </tbody>
     </table>
   </div>
+</div>
 </div>
 <br>
 <br>

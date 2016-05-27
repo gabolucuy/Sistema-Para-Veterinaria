@@ -10,11 +10,11 @@ class Cliente < ActiveRecord::Base
 	has_many :atencions
 	has_many :ventums
 	before_create :correo?
-def correo?
-	a=self.correo.split('@')
-	if(a.size!=2)
-		errors.add(:correo, "no valido")
-		return false
+	def correo?
+		a=self.correo.split('@')
+		if(a.size!=2)
+			errors.add(:correo, "no valido")
+			return false
+		end
 	end
-end
 end

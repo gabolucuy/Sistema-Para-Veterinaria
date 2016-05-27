@@ -13,6 +13,7 @@
    }
 
 </style>
+<div id="muestra">
 <h1><strong>Datos de la Atencion</strong></h1>
 <p id="notice"><%= notice %></p>
 
@@ -74,6 +75,7 @@
   <strong>Tratamiento:</strong>
   <%= @atencion.tratamiento %>
 </p>
+</div>
 
 <%= link_to 'Edit', edit_atencion_path(@atencion), class: "btn btn-warning"  %> |
 <%= link_to 'Back', atencions_path , class: "btn btn-primary" %>
