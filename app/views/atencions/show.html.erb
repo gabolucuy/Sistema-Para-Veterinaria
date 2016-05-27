@@ -30,8 +30,8 @@
 <%else%>
    <%= form_tag({:controller => "atencions", :action => "asignar_mascota"}, :method => :get) do %>
     <%= collection_select :cliente, :cliente_id, Mascotum.where(cliente_id:@atencion.cliente_id), :id, :nombre%>
-    <%= submit_tag "Asignar" , class: "btn btn-danger" %> 
-    <% end %> 
+    <%= submit_tag "Asignar" , class: "btn btn-danger" %>
+    <% end %>
 <%end%>
 <p>
   <strong>Veterinario:</strong>
@@ -52,7 +52,7 @@
 </p>
 
 <p>
-  <strong>Temperatura:</strong>
+  <strong>Temperatura(°C):</strong>
   <%= @atencion.temperatura %>
 </p>
 
