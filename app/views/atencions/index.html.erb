@@ -25,7 +25,7 @@
         <th>Cliente</th>
         <th>Mascota nombre</th>
         <th>Anamnesis</th>
-        <th>Temperatura</th>
+        <th>Temperatura(°C)</th>
         <th>Mucosas</th>
         <th>Palpacion</th>
         <th>Diagnostico</th>
@@ -39,7 +39,7 @@
       <% @atencions.each do |atencion| %>
         <tr>
           <td><%= atencion.fecha %></td>
-          <td><%= atencion.cliente.nombre %> <%= atencion.cliente.apellido %></td>        
+          <td><%= atencion.cliente.nombre %> <%= atencion.cliente.apellido %></td>
           <td><%= atencion.mascotum.nombre %></td>
           <td><%= atencion.anamnesis %></td>
           <td><%= atencion.temperatura %></td>
