@@ -59,17 +59,19 @@
       <tr>
         <td><%= f.label :Sexo %></td>
         <% genero = {'Masculino'=> true, 'Femenino'=> false} %>
-          <fieldset>
+        <td><fieldset>
             <% lista = genero.sort %>
             <% lista.each do |x| %>
-              <%= f.radio_button :sexo, x[1]%>
+            <%= f.radio_button :sexo, x[1]%>
               <label for="<%= x[1]%>"><%= x[0]%></label>
             <% end %>
           </fieldset>
+        </td>
       </tr>
       <tr>
-        <td><%= f.label :Color %></td>
+        <td><%= f.label :Esterilizado %></td>
         <% este = {'Si'=> true, 'No'=> false} %>
+        <td>
           <fieldset>
             <% lista = este.sort %>
             <% lista.each do |x| %>
@@ -77,6 +79,7 @@
               <label for="<%= x[1]%>"><%= x[0]%></label>
             <% end %>
           </fieldset>
+        </td>
       </tr>
   </table>
   </div>

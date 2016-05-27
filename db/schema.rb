@@ -23,14 +23,12 @@ ActiveRecord::Schema.define(version: 20160527052327) do
     t.text     "tratamiento"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.integer  "mascota_id"
     t.integer  "cliente_id"
     t.integer  "mascotum_id"
     t.integer  "veterinario_id"
   end
 
   add_index "atencions", ["cliente_id"], name: "index_atencions_on_cliente_id"
-  add_index "atencions", ["mascota_id"], name: "index_atencions_on_mascota_id"
   add_index "atencions", ["mascotum_id"], name: "index_atencions_on_mascotum_id"
   add_index "atencions", ["veterinario_id"], name: "index_atencions_on_veterinario_id"
 

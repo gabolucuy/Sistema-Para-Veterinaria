@@ -2,14 +2,10 @@ Rails.application.routes.draw do
   resources :atencions
   resources :turnos
   resources :veterinarios
-<<<<<<< HEAD
   resources :clientes
-
-=======
   resources :veterinarios
   get 'atencions/:id/asignar_mascota'=>'atencions#asignar_mascota'
   get '/clientes/:id/ventas' => 'clientes#ventas'
->>>>>>> 9d0494c20b707c1ed7593bb425475d75801062f3
   get '/clientes/buscar' => 'clientes#buscar'
   get '/mascota/buscar' => 'mascota#buscar'
   get '/clientes/:id/ventas' => 'clientes#ventas'
