@@ -16,7 +16,15 @@ class AtencionsController < ApplicationController
   def new
     @atencion = Atencion.new
   end
+  def asignar_mascota
 
+     @atencion = Atencion.find(params[:id])
+     @atencion.mascotum_id = params[:cliente][:cliente_id]   
+     @atencion.save
+     respond_to do |format|      
+        format.html { redirect_to @atencion, notice: 'Mascota asignada' }
+     end
+  end
   # GET /atencions/1/edit
   def edit
   end
@@ -69,6 +77,6 @@ class AtencionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def atencion_params
-      params.require(:atencion).permit(:fecha, :cliente_id, :mascota_nombre, :anamnesis, :temperatura, :mucosas, :palpacion, :diagnostico, :tratamiento, :Idveterinario)
+      params.require(:atencion).permit(:fecha,:anamnesis, :temperatura, :mucosas, :palpacion, :diagnostico, :tratamiento,:cliente_id,:mascotum_id,:veterinario_id)
     end
 end

@@ -1,5 +1,6 @@
 class Mascotum < ActiveRecord::Base
 	belongs_to :cliente
+	has_many :atencions
 	validates :nombre,:presence=>{message: "No puede estar en blanco"}
 	validates :especie,:presence=>{message: "No puede estar en blanco"}
 	validates :raza,:presence=>{message: "No puede estar en blanco"}

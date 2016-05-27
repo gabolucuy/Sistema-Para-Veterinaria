@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :turnos
   resources :veterinarios
   resources :veterinarios
+  get 'atencions/:id/asignar_mascota'=>'atencions#asignar_mascota'
   get '/clientes/:id/ventas' => 'clientes#ventas'
   get '/clientes/buscar' => 'clientes#buscar'
   get '/mascota/buscar' => 'mascota#buscar'
