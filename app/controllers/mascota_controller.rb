@@ -32,7 +32,7 @@ class MascotaController < ApplicationController
 
     respond_to do |format|
       if @mascotum.save
-        format.html { redirect_to @mascotum, notice: 'Mascotum was successfully created.' }
+        format.html { redirect_to @mascotum, notice: 'Mascota creada satisfactoriamente.' }
         format.json { render :show, status: :created, location: @mascotum }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class MascotaController < ApplicationController
   def update
     respond_to do |format|
       if @mascotum.update(mascotum_params)
-        format.html { redirect_to @mascotum, notice: 'Mascotum was successfully updated.' }
+        format.html { redirect_to @mascotum, notice: 'Mascota fue modificada satisfactoriamente.' }
         format.json { render :show, status: :ok, location: @mascotum }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class MascotaController < ApplicationController
   def destroy
     @mascotum.destroy
     respond_to do |format|
-      format.html { redirect_to mascota_url, notice: 'Mascotum was successfully destroyed.' }
+      format.html { redirect_to mascota_url, notice: 'Mascota eliminada satisfactoriamente.' }
       format.json { head :no_content }
     end
   end

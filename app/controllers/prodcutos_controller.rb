@@ -22,11 +22,11 @@ class ProdcutosController < ApplicationController
     if(  @prodcuto.cantidad - params[:cantbox].to_i >= 0 )
       @prodcuto.cantidad=@prodcuto.cantidad - params[:cantbox].to_i
       @prodcuto.save
-      respond_to do |format|      
+      respond_to do |format|
         format.html { redirect_to @prodcuto, notice: 'Producto retirado de almacen' }
       end
     else
-      respond_to do |format|    
+      respond_to do |format|
         format.html { redirect_to @prodcuto, notice: 'Error al modificar,cantidad insuficiente en almacen ' }
       end
     end
@@ -36,11 +36,11 @@ class ProdcutosController < ApplicationController
     if(  @prodcuto.cantidad - params[:cantbox].to_i >= 0 )
       @prodcuto.cantidad=@prodcuto.cantidad + params[:cantbox].to_i
       @prodcuto.save
-      respond_to do |format|      
+      respond_to do |format|
         format.html { redirect_to @prodcuto, notice: 'Producto retirado de almacen' }
       end
     else
-      respond_to do |format|    
+      respond_to do |format|
         format.html { redirect_to @prodcuto, notice: 'Error al modificar,cantidad insuficiente en almacen ' }
       end
     end
@@ -56,7 +56,7 @@ class ProdcutosController < ApplicationController
 
     respond_to do |format|
       if @prodcuto.save
-        format.html { redirect_to @prodcuto, notice: 'Prodcuto was successfully created.' }
+        format.html { redirect_to @prodcuto, notice: 'Prodcuto creado satisfactoriamente.' }
         format.json { render :show, status: :created, location: @prodcuto }
       else
         format.html { render :new }
@@ -70,7 +70,7 @@ class ProdcutosController < ApplicationController
   def update
     respond_to do |format|
       if @prodcuto.update(prodcuto_params)
-        format.html { redirect_to @prodcuto, notice: 'Prodcuto was successfully updated.' }
+        format.html { redirect_to @prodcuto, notice: 'Prodcuto fue modificado satisfactoriamente.' }
         format.json { render :show, status: :ok, location: @prodcuto }
       else
         format.html { render :edit }
@@ -84,7 +84,7 @@ class ProdcutosController < ApplicationController
   def destroy
     @prodcuto.destroy
     respond_to do |format|
-      format.html { redirect_to prodcutos_url, notice: 'Prodcuto was successfully destroyed.' }
+      format.html { redirect_to prodcutos_url, notice: 'Prodcuto eliminado satisfactoriamente.' }
       format.json { head :no_content }
     end
   end

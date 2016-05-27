@@ -42,7 +42,7 @@ class VeterinariosController < ApplicationController
   def update
     respond_to do |format|
       if @veterinario.update(veterinario_params)
-        format.html { redirect_to @veterinario, notice: 'Veterinario was successfully updated.' }
+        format.html { redirect_to @veterinario, notice: 'Veterinario fue modificado satisfactoriamente.' }
         format.json { render :show, status: :ok, location: @veterinario }
       else
         format.html { render :edit }

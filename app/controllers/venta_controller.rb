@@ -31,7 +31,7 @@ class VentaController < ApplicationController
 
     respond_to do |format|
       if @ventum.save
-        format.html { redirect_to @ventum, notice: 'Ventum was successfully created.' }
+        format.html { redirect_to @ventum, notice: 'Ventcreada satisfactoriamente.' }
         format.json { render :show, status: :created, location: @ventum }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class VentaController < ApplicationController
   def update
     respond_to do |format|
       if @ventum.update(ventum_params)
-        format.html { redirect_to @ventum, notice: 'Ventum was successfully updated.' }
+        format.html { redirect_to @ventum, notice: 'Venta fue modificado satisfactoriamente.' }
         format.json { render :show, status: :ok, location: @ventum }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class VentaController < ApplicationController
   def destroy
     @ventum.destroy
     respond_to do |format|
-      format.html { redirect_to venta_url, notice: 'Ventum was successfully destroyed.' }
+      format.html { redirect_to venta_url, notice: 'Venteliminada satisfactoriamente.' }
       format.json { head :no_content }
     end
   end

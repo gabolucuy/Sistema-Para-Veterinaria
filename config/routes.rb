@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :atencions
   resources :turnos
   resources :veterinarios
+<<<<<<< HEAD
 
   resources :clientes
 
@@ -9,6 +10,12 @@ Rails.application.routes.draw do
   get 'atencions/:id/asignar_mascota'=>'atencions#asignar_mascota'
   get '/clientes/:id/ventas' => 'clientes#ventas'
 
+=======
+  resources :clientes
+  resources :veterinarios
+  get 'atencions/:id/asignar_mascota'=>'atencions#asignar_mascota'
+  get '/clientes/:id/ventas' => 'clientes#ventas'
+>>>>>>> 3970bc75db42d397e99c6bf629348b5e2f164133
   get '/clientes/buscar' => 'clientes#buscar'
   get '/mascota/buscar' => 'mascota#buscar'
   get '/clientes/:id/ventas' => 'clientes#ventas'
