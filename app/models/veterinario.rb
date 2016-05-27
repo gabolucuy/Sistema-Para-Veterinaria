@@ -1,4 +1,5 @@
 class Veterinario < ActiveRecord::Base
+  has_many :atencions
   validates :ci, :uniqueness=>{message:"Ya esta registrado"}
 	validates :ci,:presence=>{message: "No puede estar vacio"}
 	validates :nombre,:presence=>{message: "No puede estar vacio"}

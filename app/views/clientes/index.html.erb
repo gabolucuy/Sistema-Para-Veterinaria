@@ -19,13 +19,14 @@
 
  <div class="col-md-4 col-md-offset-4">
   <%= form_tag({:controller => "clientes", :action => "buscar"}, :method => :get) do %>
-  
-    <%= label_tag("") %> 
+
+    <%= label_tag("") %>
 
   <%= text_field_tag(:searchbox) %>
-  
-<%= submit_tag "Buscar" , class: "btn btn-danger" %> 
+
+<%= submit_tag "Buscar" , class: "btn btn-danger" %>
 <% end %>
+<div id="muestra">
 <table class="table table-striped">
   <thead>
     <tr>
@@ -48,13 +49,13 @@
         <td><%= cliente.correo %></td>
         <td><%= link_to 'Ver', cliente, class: "btn btn-info"%></td>
         <td><%= link_to 'Editar', edit_cliente_path(cliente) ,class: "btn btn-warning"%></td>
-        <td><%= link_to 'Eliminar', cliente, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-danger" %></td>
+        <td><%= link_to 'Eliminar', cliente, method: :delete, data: { confirm: 'Esta seguro?' } , class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 </div>
-
+</div>
 </div>
 
 <br>

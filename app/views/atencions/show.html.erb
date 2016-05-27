@@ -13,28 +13,38 @@
    }
 
 </style>
+<div id="muestra">
 <h1><strong>Datos de la Atencion</strong></h1>
 <p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= Cliente.find(@atencion.cliente_id).nombre  %>
+  <%= Cliente.find(@atencion.cliente_id).apellido  %>
+</p>
+<p>
+  <%if@atencion.mascotum_id !=nil%>
+  <strong>Mascota:</strong>
+  <%= Mascotum.find(@atencion.mascotum_id).nombre %>
+</p>
+<%else%>
+   <%= form_tag({:controller => "atencions", :action => "asignar_mascota"}, :method => :get) do %>
+    <%= collection_select :cliente, :cliente_id, Mascotum.where(cliente_id:@atencion.cliente_id), :id, :nombre%>
+    <%= submit_tag "Asignar" , class: "btn btn-danger" %> 
+    <% end %> 
+<%end%>
+<p>
+  <strong>Veterinario:</strong>
+   <%= Veterinario.find(@atencion.veterinario_id).nombre  %>
+  <%= Veterinario.find(@atencion.veterinario_id).apellido  %>
+</p>
 
 <p>
   <strong>Fecha:</strong>
   <%= @atencion.fecha %>
 </p>
 
-<p>
-  <strong>Cliente:</strong>
-  <%= @atencion.cliente_id %>
-</p>
 
-<p>
-  <strong>Veterinario:</strong>
-  <%= @atencion.Idveterinario %>
-</p>
-
-<p>
-  <strong>Mascota nombre:</strong>
-  <%= @atencion.mascota_nombre %>
-</p>
 
 <p>
   <strong>Anamnesis:</strong>
@@ -65,6 +75,7 @@
   <strong>Tratamiento:</strong>
   <%= @atencion.tratamiento %>
 </p>
+</div>
 
 <%= link_to 'Edit', edit_atencion_path(@atencion), class: "btn btn-warning"  %> |
 <%= link_to 'Back', atencions_path , class: "btn btn-primary" %>

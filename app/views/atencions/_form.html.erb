@@ -21,24 +21,22 @@
   <div class="field, container">
     <table class="table">
       <tr>
+        <td><%= f.label :Dueño %></td>
+        <td><%= f.collection_select(:cliente_id, Cliente.all, :id, :ci)  %></td>
+      </tr>
+      <%= hidden_field_tag :mascotum_id, nil %>
+      <tr>
+        <td><%= f.label :Veterinario %></td>
+        <td><%= f.collection_select(:veterinario_id, Veterinario.all, :id, :ci) %></td>
+      </tr>
+      <tr>
         <td><%= f.label :fecha %></td>
         <td><%= f.date_select :fecha %></td>
       </tr>
-      <tr>
-        <td><%= f.label :cliente_id %></td>
-        <td><%= f.number_field :cliente_id %></td>
-      </tr>
-      <tr>
-        <td><%= f.label :Veterinario %></td>
-        <td><%= f.number_field :Idveterinario %></td>
-      </tr>
-      <tr>
-        <td><%= f.label :mascota_nombre %></td>
-        <td><%= f.text_field :mascota_nombre %></td>
-      </tr>
+               
       <tr>
         <td><%= f.label :anamnesis %></td>
-        <td><%= f.text_area :anamnesis %></td>
+        <td><%= f.text_area :anamnesis, {:id => "lol"} %></td>
       </tr>
       <tr>
         <td><%= f.label :temperatura %></td>
@@ -66,3 +64,4 @@
     <%= f.submit 'Guardar', class:"big ui button, ui inverted olive button"  %>
   </div>
 <% end %>
+

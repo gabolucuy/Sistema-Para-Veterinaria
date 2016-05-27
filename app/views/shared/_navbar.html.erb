@@ -4,6 +4,9 @@ body{
   text-align: center;
 }
 </style>
+
+
+
 <nav class="navbar navbar-default">
 <div class="container-fluid">
   <!-- Brand and toggle get grouped for better mobile display -->
@@ -18,7 +21,7 @@ body{
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
     <ul class="nav navbar-nav">
     </ul>
 
@@ -26,8 +29,11 @@ body{
       <li><a href="/veterinaria"><i class="home icon"></i>Home</a></li>
       <li><a href="/About"><i class="doctor icon"></i>About</a></li>
       <li><a href="/Contact"><i class="tablet icon"></i>Contact</a></li>
-      <li><a href="javascript:window.print()"> <i class="print icon"></i>Imprimir</a></li>
-
+      <li><a href="javascript:imprSelec('muestra')"> <i class="print icon"></i>Imprimir</a></li>
+      <script type="text/javascript">
+        function imprSelec(muestra)
+          {var ficha=document.getElementById(muestra);var ventimp=window.open(' ','popimpr');ventimp.document.write(ficha.innerHTML);ventimp.document.close();ventimp.print();ventimp.close();}
+      </script>
     </ul>
   </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->

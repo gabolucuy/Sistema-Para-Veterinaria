@@ -24,7 +24,7 @@ class MascotaController < ApplicationController
   def buscar
     @mascota =  Mascotum.where("nombre like :name1 or especie like :name1 or raza like :name1", {:name1 => "%#{params[:searchbox]}%"})
   end
-  
+
   # POST /mascota
   # POST /mascota.json
   def create
@@ -73,6 +73,6 @@ class MascotaController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mascotum_params
-      params.require(:mascotum).permit(:nombre, :especie, :raza, :fecha_nacimiento, :cliente_id)
+      params.require(:mascotum).permit(:nombre, :especie, :raza, :fecha_nacimiento, :cliente_id,:sexo,:esterilizado,:color)
     end
 end

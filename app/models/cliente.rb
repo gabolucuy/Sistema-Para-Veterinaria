@@ -7,6 +7,7 @@ class Cliente < ActiveRecord::Base
 	validates :correo,:presence=>{message: "No puede estar vacio"}
 	validates :correo, uniqueness: true
 	has_many :mascotums
+	has_many :atencions
 	has_many :ventums
 	before_create :correo?
 	def correo?
