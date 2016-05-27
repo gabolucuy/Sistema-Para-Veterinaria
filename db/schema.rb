@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(version: 20160526215226) do
     t.date     "fecha_nacimiento"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.integer  "clientes_id"
     t.integer  "cliente_id"
+    t.integer  "clientes_id"
   end
 
   add_index "mascota", ["cliente_id"], name: "index_mascota_on_cliente_id"

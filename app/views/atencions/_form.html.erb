@@ -8,15 +8,14 @@
 </style>
 <%= form_for(@atencion) do |f| %>
   <% if @atencion.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@atencion.errors.count, "error") %> prohibited this atencion from being saved:</h2>
-
-      <ul>
+    <div class="container">
+    <div class="alert alert-danger" role="alert">
+      <font color="black"><h2><%= pluralize(@atencion.errors.count, "error") %> prohibited this atencion from being saved:</h2></font>
       <% @atencion.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+         <font color="black"><li><%= message %></li></font>
       <% end %>
-      </ul>
     </div>
+  </div>
   <% end %>
 
   <div class="field, container">
