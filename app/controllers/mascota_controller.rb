@@ -24,7 +24,7 @@ class MascotaController < ApplicationController
   def buscar
     @mascota =  Mascotum.where("nombre like :name1 or especie like :name1 or raza like :name1", {:name1 => "%#{params[:searchbox]}%"})
   end
-  
+
   # POST /mascota
   # POST /mascota.json
   def create
