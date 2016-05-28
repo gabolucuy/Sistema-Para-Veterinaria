@@ -14,7 +14,14 @@ class VentaController < ApplicationController
     @ventum.save
     @list = List.new
   end
-
+  def  cambiar
+    @ventum = Ventum.find(params[:id])
+    @ventum.estado =true
+    @ventum.save
+    respond_to do |format|
+        format.html { redirect_to @ventum, notice: 'Venta terminada.' }
+    end
+  end
   # GET /venta/new
   def new
     @ventum = Ventum.new
@@ -28,7 +35,7 @@ class VentaController < ApplicationController
   # POST /venta.json
   def create
     @ventum = Ventum.new(ventum_params)
-
+    @ventum.estado =false
     respond_to do |format|
       if @ventum.save
         format.html { redirect_to @ventum, notice: 'Ventcreada satisfactoriamente.' }
@@ -72,6 +79,6 @@ class VentaController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ventum_params
-      params.require(:ventum).permit(:Costo,:cliente_id)
+      params.require(:ventum).permit(:Costo,:cliente_id,:estado)
     end
 end

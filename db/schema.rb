@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160527052327) do
+ActiveRecord::Schema.define(version: 20160528200910) do
 
   create_table "atencions", force: :cascade do |t|
     t.date     "fecha"
@@ -23,12 +23,14 @@ ActiveRecord::Schema.define(version: 20160527052327) do
     t.text     "tratamiento"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "mascota_id"
     t.integer  "cliente_id"
     t.integer  "mascotum_id"
     t.integer  "veterinario_id"
   end
 
   add_index "atencions", ["cliente_id"], name: "index_atencions_on_cliente_id"
+  add_index "atencions", ["mascota_id"], name: "index_atencions_on_mascota_id"
   add_index "atencions", ["mascotum_id"], name: "index_atencions_on_mascotum_id"
   add_index "atencions", ["veterinario_id"], name: "index_atencions_on_veterinario_id"
 
@@ -60,8 +62,8 @@ ActiveRecord::Schema.define(version: 20160527052327) do
     t.date     "fecha_nacimiento"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.integer  "cliente_id"
     t.integer  "clientes_id"
+    t.integer  "cliente_id"
     t.boolean  "sexo"
     t.boolean  "esterilizado"
     t.string   "color"
@@ -96,6 +98,7 @@ ActiveRecord::Schema.define(version: 20160527052327) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "cliente_id"
+    t.boolean  "estado"
   end
 
   add_index "venta", ["cliente_id"], name: "index_venta_on_cliente_id"

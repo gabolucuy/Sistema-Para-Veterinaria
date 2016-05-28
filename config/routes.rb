@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  resources :atencions
-  resources :turnos
 
-  resources :clientes
-  resources :veterinarios
+
+  get '/ventas/:id/cambiar' => 'venta#cambiar'
   get 'atencions/:id/asignar_mascota'=>'atencions#asignar_mascota'
   get '/clientes/:id/ventas' => 'clientes#ventas'
   get '/clientes/buscar' => 'clientes#buscar'
@@ -13,18 +11,23 @@ Rails.application.routes.draw do
   get '/prodcutos/:id/reabastecer' => 'prodcutos#reabastecer'
   get '/turnos/:id/atendiendo' => 'turnos#atendiendo'
   get '/turnos/:id/atendido' => 'turnos#atendido'
-  resources :lists
-  resources :venta
+  
   get 'welcome/index'
   get 'veterinaria'=> 'welcome#index'
   get 'About'=> 'welcome#about'
   get 'Contact'=> 'welcome#contact'
   get 'contact/index'
   get 'about/index'
-
+  resources :atencions
+  resources :turnos
+  resources :lists
+  resources :venta
+  resources :clientes
+  resources :veterinarios
   resources :mascota
   resources :prodcutos
   resources :clientes
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

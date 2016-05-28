@@ -38,6 +38,15 @@
   <strong>ID:</strong>
   <%= @ventum.id %>
 </p>
+<p>
+  <strong>Estado:</strong>
+  <% if @ventum.estado == true %>
+  Terminado
+  <%else%>
+  Pendiente
+  <%end%>
+</p>
+<% if @ventum.estado == false%>
 <%= form_for(@list) do |f| %>
   <% if @list.errors.any? %>
 
@@ -70,6 +79,7 @@
     <br><%= f.submit 'Agregar',class: "big ui button, ui inverted green button" %><br>
   </div>
 <% end %>
+<% end %>
 <% if @ventum.lists.count > 0%>
     <strong>Lista de productos</strong>
     <br>
@@ -88,7 +98,11 @@
         <td><%=com.producto %></td>
         <td><%=com.costo %> BS.</td>
         <td><%=com.cantidad %></td>
+        <% if @ventum.estado == false%>
         <td><%= link_to 'Eliminar', com, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+        <%else%>
+         Terminado
+        <%end%>
       </tr>
     <%end%>
     </table>
@@ -98,5 +112,8 @@
   <%end%>
 <br>
 <br>
+<% if @ventum.estado == false%>
+<%= link_to 'Terminar venta', '/ventas/'+@ventum.id.to_s+'/cambiar' , class: "btn btn-success" %>
+<%end%>
 <%= link_to 'Editar', edit_ventum_path(@ventum), class: "big ui button, ui inverted yellow button" %>
-<%= link_to 'Terminar compra', venta_path , class: "big ui button, ui inverted blue button"%>
+<%= link_to 'Atras', venta_path , class: "big ui button, ui inverted blue button"%>
