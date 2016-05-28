@@ -16,11 +16,18 @@ class VentaController < ApplicationController
   end
   def  cambiar
     @ventum = Ventum.find(params[:id])
-    @ventum.estado =true
-    @ventum.save
-    respond_to do |format|
-        format.html { redirect_to @ventum, notice: 'Venta terminada.' }
-    end
+    if @ventum.Costo ==0
+       respond_to do |format|
+          format.html { redirect_to @ventum, notice: 'Error al terminar.' }
+      end
+    else
+      @ventum.estado =true
+      @ventum.save
+      respond_to do |format|
+          format.html { redirect_to @ventum, notice: 'Venta terminada.' }
+      end
+    end  
+    
   end
   # GET /venta/new
   def new

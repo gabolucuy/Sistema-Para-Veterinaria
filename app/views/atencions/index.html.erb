@@ -39,15 +39,30 @@
       <% @atencions.each do |atencion| %>
         <tr>
           <td><%= atencion.fecha %></td>
-          <td><%= atencion.cliente.nombre %> <%= atencion.cliente.apellido %></td>
-          <td><%= atencion.mascotum.nombre %></td>
+          <td><%if Cliente.find_by(id: atencion.cliente_id) != nil %>
+            <%= atencion.cliente.nombre %> <%= atencion.cliente.apellido %>
+            <%else%>
+            N/A
+            <%end%>
+          </td>
+          <td><% if Mascotum.find_by(id: atencion.mascotum_id) != nil  %>
+            <%= atencion.mascotum.nombre %>
+            <%else%>
+            N/A
+            <%end%>
+          </td>
           <td><%= atencion.anamnesis %></td>
           <td><%= atencion.temperatura %></td>
           <td><%= atencion.mucosas %></td>
           <td><%= atencion.palpacion %></td>
           <td><%= atencion.diagnostico %></td>
           <td><%= atencion.tratamiento %></td>
-          <td><%= atencion.veterinario.nombre%> <%= atencion.veterinario.apellido%></td>
+          <td><% if Veterinario.find_by(id: atencion.veterinario_id) != nil  %>
+            <%= atencion.veterinario.nombre%> <%= atencion.veterinario.apellido%>
+            <%else%>
+            N/A
+            <%end%>
+          </td>
           <td><%= link_to 'Ver', atencion, class: "btn btn-info" %></td>
           <td><%= link_to 'Editar', edit_atencion_path(atencion) , class: "btn btn-warning"%></td>
           <td><%= link_to 'Eliminar', atencion, method: :delete, data: { confirm: 'Esta seguro?' } , class: "btn btn-danger"%></td>

@@ -23,6 +23,7 @@
       <th>Id venta</th>
       <th>Dueño</th>
       <th>Costo (Bs)</th>
+      <th>Estado</th>
       <th colspan="5"></th>
     </tr>
   </thead>
@@ -37,6 +38,12 @@
         <td>N/A</td>
         <%end %>
         <td><%= ventum.Costo %></td>
+        <td><% if ventum.estado == true %>
+        Terminado
+        <%else%>
+        Pendiente
+        <%end%>
+       </td>
         <td><%= link_to 'Mostrar', ventum, class: "btn btn-info" %></td>
         <td><%= link_to 'Editar', edit_ventum_path(ventum) ,class: "btn btn-warning" %></td>
         <td><%= link_to 'Eliminar', ventum, method: :delete, data: { confirm: 'Estas seguro?' }, class: "btn btn-danger"  %></td>
