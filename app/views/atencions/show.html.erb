@@ -19,13 +19,20 @@
 
 <p>
   <strong>Cliente:</strong>
-  <%= Cliente.find(@atencion.cliente_id).nombre  %>
-  <%= Cliente.find(@atencion.cliente_id).apellido  %>
+  <%if Cliente.find_by(id: @atencion.cliente_id) != nil %>
+            <%= @atencion.cliente.nombre %> <%= @atencion.cliente.apellido %>
+  <%else%>
+            N/A
+  <%end%>
 </p>
 <p>
   <%if@atencion.mascotum_id !=nil%>
   <strong>Mascota:</strong>
-  <%= Mascotum.find(@atencion.mascotum_id).nombre %>
+  <% if Mascotum.find_by(id: @atencion.mascotum_id) != nil  %>
+            <%= @atencion.mascotum.nombre %>
+            <%else%>
+            N/A
+            <%end%>
 </p>
 <%else%>
    <%= form_tag({:controller => "atencions", :action => "asignar_mascota"}, :method => :get) do %>
@@ -35,8 +42,11 @@
 <%end%>
 <p>
   <strong>Veterinario:</strong>
-   <%= Veterinario.find(@atencion.veterinario_id).nombre  %>
-  <%= Veterinario.find(@atencion.veterinario_id).apellido  %>
+   <% if Veterinario.find_by(id: @atencion.veterinario_id) != nil  %>
+            <%= @atencion.veterinario.nombre%> <%= @atencion.veterinario.apellido%>
+            <%else%>
+            N/A
+            <%end%>
 </p>
 
 <p>
