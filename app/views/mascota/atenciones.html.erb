@@ -1,0 +1,60 @@
+<style type="text/css">
+  p{
+    color:white;
+   }
+   td{
+    background-color: white;
+   }
+   thead{
+    color:white;
+   }
+   strong{
+    color:white;
+   }
+</style>
+
+<h1><strong>Historial medico </strong></h1>
+<div class="row">
+<div class="col-md-4 col-md-offset-4">
+<table  class="table table-striped">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Anamnesis</th>
+      <th>Temperatura(°C)</th>
+      <th>Mucosas</th>
+      <th>Palpacion</th>
+      <th>Diagnostico</th>
+      <th>Tratamiento</th>
+      <th>Veterinario</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mascota.atencions.each do |atencion| %>
+      <tr>
+        <td><%= atencion.fecha %></td>
+        <td><%= atencion.anamnesis %></td>
+        <td><%= atencion.temperatura %></td>
+        <td><%= atencion.mucosas %></td>
+        <td><%= atencion.palpacion %></td>
+        <td><%= atencion.diagnostico %></td>
+        <td><%= atencion.tratamiento %></td>
+        <td><% if Veterinario.find_by(id: atencion.veterinario_id) != nil  %>
+          <%= atencion.veterinario.nombre%> <%= atencion.veterinario.apellido%>
+          <%else%>
+          N/A
+          <%end%>
+        </td>
+        <td><%= link_to 'Ver', atencion, class: "btn btn-info" %></td>
+        <td><%= link_to 'Editar', edit_atencion_path(atencion) , class: "btn btn-warning"%></td>
+        <td><%= link_to 'Eliminar', atencion, method: :delete, data: { confirm: 'Esta seguro?' } , class: "btn btn-danger"%></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
+</div>
+<%= link_to 'Atras', '/mascota/'+@mascota.id.to_s+'' , class: "btn btn-success" %>

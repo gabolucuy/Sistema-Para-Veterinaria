@@ -86,7 +86,8 @@
 </div>
 <br>
 <div id="botones">
-<%= link_to 'Historial de compras', '/clientes/'+@cliente.id.to_s+'/ventas' , class: "btn btn-success" %>
+  <%= link_to 'Historial de compras', '/clientes/'+@cliente.id.to_s+'/ventas' , class: "btn btn-success" %>
+
 <%= link_to 'Registrar Mascota', new_mascotum_path , class: "btn btn-success" %>
 <%= link_to 'Editar', edit_cliente_path(@cliente), class: "btn btn-warning" %>
 <%= link_to 'Lista de Clientes', clientes_path , class: "btn btn-primary"%>

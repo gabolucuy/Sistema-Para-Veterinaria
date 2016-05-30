@@ -11,7 +11,9 @@ class MascotaController < ApplicationController
   # GET /mascota/1.json
   def show
   end
-
+  def atenciones
+    @mascota = Mascotum.find(params[:id])
+  end
   # GET /mascota/new
   def new
     @mascotum = Mascotum.new

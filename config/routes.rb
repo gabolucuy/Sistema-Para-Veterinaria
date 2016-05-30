@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   get '/ventas/:id/cambiar' => 'venta#cambiar'
   get 'atencions/:id/asignar_mascota'=>'atencions#asignar_mascota'
   get '/clientes/:id/ventas' => 'clientes#ventas'
+  
+  get '/mascota/:id/atenciones' => 'mascota#atenciones'
+
   get '/clientes/buscar' => 'clientes#buscar'
   get '/mascota/buscar' => 'mascota#buscar'
   get '/veterinarios/buscar' => 'veterinarios#buscar'

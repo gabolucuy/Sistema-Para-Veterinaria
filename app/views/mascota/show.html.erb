@@ -54,20 +54,21 @@
 <p>
   <strong>Sexo:</strong>
   <%if @mascotum.sexo ==true%>
-   Macho  
+   Macho
   <%else%>
-   Femenino  
+   Femenino
   <%end%>
 </p>
 <p>
   <strong>Esterilizado:</strong>
   <%if @mascotum.esterilizado ==true%>
-   Si 
+   Si
   <%else%>
-   No 
+   No
   <%end%>
 </p>
 </div>
+<%= link_to 'Historial medico', '/mascota/'+@mascotum.id.to_s+'/atenciones' , class: "btn btn-success" %>
 
 <%= link_to 'Editar', edit_mascotum_path(@mascotum), class: "btn btn-warning" %>
 <%= link_to 'home Mascotas', mascota_path , class: "btn btn-primary"%>
