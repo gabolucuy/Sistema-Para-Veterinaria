@@ -20,12 +20,6 @@
   <thead>
     <tr>
       <th>Fecha</th>
-      <th>Anamnesis</th>
-      <th>Temperatura(°C)</th>
-      <th>Mucosas</th>
-      <th>Palpacion</th>
-      <th>Diagnostico</th>
-      <th>Tratamiento</th>
       <th>Veterinario</th>
       <th colspan="5"></th>
     </tr>
@@ -35,12 +29,6 @@
     <% @mascota.atencions.each do |atencion| %>
       <tr>
         <td><%= atencion.fecha %></td>
-        <td><%= atencion.anamnesis %></td>
-        <td><%= atencion.temperatura %></td>
-        <td><%= atencion.mucosas %></td>
-        <td><%= atencion.palpacion %></td>
-        <td><%= atencion.diagnostico %></td>
-        <td><%= atencion.tratamiento %></td>
         <td><% if Veterinario.find_by(id: atencion.veterinario_id) != nil  %>
           <%= atencion.veterinario.nombre%> <%= atencion.veterinario.apellido%>
           <%else%>

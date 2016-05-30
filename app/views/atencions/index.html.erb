@@ -15,9 +15,9 @@
 </style>
 <p id="notice"><%= notice %></p>
 <div id="muestra">
-<h1>Listing Atencions</h1>
+<h1>Lista de Atenciones</h1>
 <div class="row">
-  <div class="col-md-5 col-md-offset-2">
+  <div class="col-md-5 col-md-offset-4">
 
   <table  class="table table-striped">
     <thead>
@@ -25,14 +25,9 @@
         <th>Fecha</th>
         <th>Cliente</th>
         <th>Mascota nombre</th>
-        <th>Anamnesis</th>
-        <th>Temperatura(°C)</th>
-        <th>Mucosas</th>
-        <th>Palpacion</th>
-        <th>Diagnostico</th>
-        <th>Tratamiento</th>
         <th>Veterinario</th>
-        <th colspan="5"></th>
+
+        <th colspan="3"></th>
       </tr>
     </thead>
 
@@ -52,12 +47,7 @@
             N/A
             <%end%>
           </td>
-          <td><%= atencion.anamnesis %></td>
-          <td><%= atencion.temperatura %></td>
-          <td><%= atencion.mucosas %></td>
-          <td><%= atencion.palpacion %></td>
-          <td><%= atencion.diagnostico %></td>
-          <td><%= atencion.tratamiento %></td>
+
           <td><% if Veterinario.find_by(id: atencion.veterinario_id) != nil  %>
             <%= atencion.veterinario.nombre%> <%= atencion.veterinario.apellido%>
             <%else%>
