@@ -17,9 +17,7 @@
 <div id="muestra">
 <h1><strong>Lista Veterinarios</strong></h1>
 <div class="row">
-<<<<<<< HEAD
-<div class="col-md-3 col-md-offset-2">
-=======
+
 <div class="col-md-6 col-md-offset-3">
 
   <%= form_tag({:controller => "veterinarios", :action => "buscar"}, :method => :get) do %>
@@ -28,9 +26,9 @@
 
   <%= text_field_tag(:searchbox) %>
 
-<%= submit_tag "Buscar" , class: "btn btn-danger" %>
+<%= submit_tag "Buscar" , class: "btn btn-info" %>
 <% end %>
->>>>>>> a56925501d99c9e937c2bd8928ca8ac2d6093868
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -68,3 +66,4 @@
 <br>
 
 <%= link_to 'Nuevo Veterinario', new_veterinario_path, class: "btn btn-success" , style:"color:white"%>
+<a  class="btn btn-primary" href="/veterinaria">Home</a>

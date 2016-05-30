@@ -25,7 +25,7 @@
 
   <%= text_field_tag(:searchbox) %>
 
-<%= submit_tag "Buscar" , class: "btn btn-danger" %>
+<%= submit_tag "Buscar" , class: "btn btn-info" %>
 <% end %>
 <table class="table table-striped">
   <thead>
@@ -62,3 +62,6 @@
 </div>
 </div>
 <br>
+<%= link_to 'Registrar veterinario', new_veterinario_path , class: "btn btn-success" %>
+
+<a  class="btn btn-primary" href="/veterinaria">Home</a>
