@@ -115,5 +115,4 @@
 <% if @ventum.estado == false%>
 <%= link_to 'Terminar venta', '/ventas/'+@ventum.id.to_s+'/cambiar' , class: "btn btn-success" %>
 <%end%>
-<%= link_to 'Editar', edit_ventum_path(@ventum), class: "big ui button, ui inverted yellow button" %>
 <%= link_to 'Atras', venta_path , class: "big ui button, ui inverted blue button"%>

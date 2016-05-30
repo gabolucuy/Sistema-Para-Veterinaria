@@ -6,12 +6,13 @@ Rails.application.routes.draw do
   get '/clientes/:id/ventas' => 'clientes#ventas'
   get '/clientes/buscar' => 'clientes#buscar'
   get '/mascota/buscar' => 'mascota#buscar'
+  get '/veterinarios/buscar' => 'veterinarios#buscar'
   get '/clientes/:id/ventas' => 'clientes#ventas'
   get '/prodcutos/:id/modificar' => 'prodcutos#modificar'
   get '/prodcutos/:id/reabastecer' => 'prodcutos#reabastecer'
   get '/turnos/:id/atendiendo' => 'turnos#atendiendo'
   get '/turnos/:id/atendido' => 'turnos#atendido'
-  
+
   get 'welcome/index'
   get 'veterinaria'=> 'welcome#index'
   get 'About'=> 'welcome#about'

@@ -14,7 +14,7 @@
 
 </style>
 
-<h1><strong>Ventas del cliente </strong></h1>
+<h1><strong>Compras del cliente </strong></h1>
 <p>Total pagado : <%= @cliente.ventums.sum(:Costo) %></p>
 <div class="row">
 <div class="col-md-4 col-md-offset-4">
@@ -24,7 +24,7 @@
     <tr>
       <th>Id venta</th>
       <th>Costo (Bs)</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -34,7 +34,6 @@
         <td><%= ventum.id %></td>
         <td><%= ventum.Costo %></td>
         <td><%= link_to 'Mostrar', ventum, class: "btn btn-info" %></td>
-        <td><%= link_to 'Editar', edit_ventum_path(ventum) ,class: "btn btn-warning" %></td>
         <td><%= link_to 'Eliminar', ventum, method: :delete, data: { confirm: 'Estas seguro?' }, class: "btn btn-danger"  %></td>
       </tr>
     <% end %>
