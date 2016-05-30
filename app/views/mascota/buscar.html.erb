@@ -15,16 +15,28 @@
 </style>
 <p id="notice"><%= notice %></p>
 
-<h1>Lista de Mascota</h1>
+<h1>Lista de Mascotas</h1>
 <div class="row">
 <div class="col-md-6 col-md-offset-3">
+  <%= form_tag({:controller => "mascota", :action => "buscar"}, :method => :get) do %>
+
+   <%= label_tag("") %>
+
+ <%= text_field_tag(:searchbox) %>
+
+<%= submit_tag "Buscar" , class: "btn btn-info" %>
+<%end%>
+
 <table class="table table-striped">
   <thead>
     <tr>
       <th>Dueño</th>
       <th>Nombre</th>
       <th>Especie</th>
+      <th>Sexo</th>
+      <th>Color</th>
       <th>Raza</th>
+      <th>Esterilizado</th>
       <th>Fecha nacimiento</th>
       <th colspan="3"></th>
     </tr>
@@ -41,7 +53,20 @@
 
         <td><%= mascotum.nombre %></td>
         <td><%= mascotum.especie %></td>
+        <td><% if mascotum.sexo %>
+          Masculino
+          <%else%>
+          Femenino
+          <%end%>
+        </td>
+        <td><%= mascotum.color %></td>
         <td><%= mascotum.raza %></td>
+        <td><% if mascotum.esterilizado %>
+          Si
+          <%else%>
+          No
+          <%end%>
+        </td>
         <td><%= mascotum.fecha_nacimiento %></td>
         <td><%= link_to 'Ver', mascotum , class: "btn btn-info"%></td>
         <td><%= link_to 'Editar', edit_mascotum_path(mascotum), class: "btn btn-warning" %></td>
@@ -55,4 +80,4 @@
 <br>
 
 <%= link_to 'Registrar Mascota', new_mascotum_path , class: "btn btn-success" %>
-<a  class="btn btn-primary" href="veterinaria">Home</a>
+<a  class="btn btn-primary" href="/veterinaria">Home</a>
