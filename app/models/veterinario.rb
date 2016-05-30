@@ -9,6 +9,6 @@ class Veterinario < ActiveRecord::Base
 	validates :correo,:presence=>{message: "No puede estar vacio"}
   validates :especialidad,:presence=>{message: "No puede estar vacio"}
 
-	validates :correo, uniqueness: true,format: {with:  EMAIL_REGEX}
+	validates :correo, uniqueness: true,format: {with:  EMAIL_REGEX,message:"Formato invalido	"}
 
 end

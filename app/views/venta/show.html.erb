@@ -49,19 +49,13 @@
 <% if @ventum.estado == false%>
 <%= form_for(@list) do |f| %>
   <% if @list.errors.any? %>
-
-
-<div class="container">
+<div class="jumbotron">
     <div class="alert alert-danger" role="alert">
       <font color="black"><h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2></font>
       <% @list.errors.full_messages.each do |message| %>
         <font color="black"><li><%= message %></li></font>
       <% end %>
       </div>
-    </div>
-
-
-      </ul>
     </div>
   <% end %>
   <div class="field">
