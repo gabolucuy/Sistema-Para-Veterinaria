@@ -20,7 +20,9 @@ class VeterinariosController < ApplicationController
   # GET /veterinarios/1/edit
   def edit
   end
-
+  def buscar
+    @veterinarios =  Veterinario.where("nombre like :name1 or apellido like :name1 or ci like :name1", {:name1 => "%#{params[:searchbox]}%"})
+  end
   # POST /veterinarios
   # POST /veterinarios.json
   def create

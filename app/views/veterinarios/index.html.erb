@@ -17,7 +17,20 @@
 <div id="muestra">
 <h1><strong>Lista Veterinarios</strong></h1>
 <div class="row">
+<<<<<<< HEAD
 <div class="col-md-3 col-md-offset-2">
+=======
+<div class="col-md-6 col-md-offset-3">
+
+  <%= form_tag({:controller => "veterinarios", :action => "buscar"}, :method => :get) do %>
+
+    <%= label_tag("") %>
+
+  <%= text_field_tag(:searchbox) %>
+
+<%= submit_tag "Buscar" , class: "btn btn-danger" %>
+<% end %>
+>>>>>>> a56925501d99c9e937c2bd8928ca8ac2d6093868
 <table class="table table-striped">
   <thead>
     <tr>

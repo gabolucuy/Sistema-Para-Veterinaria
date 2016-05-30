@@ -1,0 +1,64 @@
+<style type="text/css">
+
+  h1{
+    color:white;
+   }
+
+   thead{
+    color:white;
+   }
+
+    td{
+    background-color: white;
+   }
+
+</style>
+<p id="notice"><%= notice %></p>
+<div id="muestra">
+<h1><strong>Lista Veterinarios</strong></h1>
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+
+  <%= form_tag({:controller => "veterinarios", :action => "buscar"}, :method => :get) do %>
+
+    <%= label_tag("") %>
+
+  <%= text_field_tag(:searchbox) %>
+
+<%= submit_tag "Buscar" , class: "btn btn-danger" %>
+<% end %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Ci</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Telefono</th>
+      <th>Correo</th>
+      <th>Especialidad</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @veterinarios.each do |veterinario| %>
+      <tr>
+        <td><%= veterinario.ci %></td>
+        <td><%= veterinario.nombre %></td>
+        <td><%= veterinario.apellido %></td>
+        <td><%= veterinario.telefono %></td>
+        <td><%= veterinario.correo %></td>
+        <td><%= veterinario.especialidad %></td>
+
+        <td><%= link_to 'Ver', veterinario ,class: "btn btn-info"%></td>
+        <td><%= link_to 'Editar', edit_veterinario_path(veterinario),class: "btn btn-warning" %></td>
+        <td><%= link_to 'Eliminar', veterinario, method: :delete, data: { confirm: 'Esta seguro?' }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<br>

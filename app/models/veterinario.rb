@@ -1,4 +1,5 @@
 class Veterinario < ActiveRecord::Base
+  EMAIL_REGEX = /\A([a-z0-9][\._\-]?)+@(\w)+(\.([a-z])+)+\z/i
   has_many :atencions
   validates :ci, :uniqueness=>{message:"Ya esta registrado"}
 	validates :ci,:presence=>{message: "No puede estar vacio"}
@@ -8,12 +9,6 @@ class Veterinario < ActiveRecord::Base
 	validates :correo,:presence=>{message: "No puede estar vacio"}
   validates :especialidad,:presence=>{message: "No puede estar vacio"}
 
-	validates :correo, uniqueness: true
-  def correo?
-  	a=self.correo.split('@')
-  	if(a.size!=2)
-  		errors.add(:correo, "no valido")
-  		return false
-  	end
-  end
+	validates :correo, uniqueness: true,format: {with:  EMAIL_REGEX}
+
 end
